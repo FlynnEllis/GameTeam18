@@ -1,5 +1,5 @@
 class item():
-	def __init__(name,description,mass):
+	def __init__(name,description,mass,price):
 		self.name = name
 		self.desc = description
 		self.mass = mass
@@ -38,5 +38,4 @@ chips = item('chips','description',4.2,2,-2)
 bigmac = item('big mac','description',4.2,3,-2)
 mcflurry = item('mcflurry','description',4.2,1,0)
 kebab = item('kebab','description',4.2,3,-2)
-
 

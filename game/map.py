@@ -7,12 +7,12 @@ class room():
         self.exits = exits                  #exits from the room (dict e.g. {'north':'glam'})
         self.items = items                  #items in the room (list of objects)
         self.npcs = npcs                    #non-player characters in the room (list of objects)
-        self.description = description
+        self.description = description      #description str
 room_pre_pre_drinks = room(
     "pre pre drinks",
     {"leave flat": "pre drinks"},
-    [npc_john],
     [],
+    [npc_john],
     "Insert description here")
     
     
