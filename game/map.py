@@ -14,7 +14,7 @@ room_pre_pre_drinks = room(
     [],
     [npc_john],
     """Welcome to the start of the greatest night of your life. 
-    You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife such as the SU, Pryzm and even Tiger Tiger. 
+    You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
     Before you leave you should select some belongings that will help you along the way.""")
     
     
