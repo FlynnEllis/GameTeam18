@@ -243,10 +243,10 @@ def execute_take(item_id):
     "You cannot take that."
     """
 
-    for key in current_room["items"]:
+    for key in current_room.items:
         if item_id == key["id"]: 
             inventory.append(key)
-            current_room["items"].remove(key)
+            current_room.items.remove(key)
             print("You have picked up " + key["name"])
     else:
         print("You cannot carry any more items!")
@@ -261,7 +261,7 @@ def execute_drop(item_id):
     
     for key in inventory:
         if item_id == key["id"]:
-            current_room["items"].append(key)
+            current_room.items.append(key)
             inventory.remove(key)
             print("You have dropped the item from your iventory")
         else:
@@ -340,12 +340,12 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-def win_condition():
-    if current_room == rooms["Office"]:
-        print("Congratualations you have won!")
-        return True
-    else:
-        return False
+#def win_condition():
+ #   if current_room == rooms["Office"]:
+  #      print("Congratualations you have won!")
+   #     return True
+    #else:
+     #   return False
 
 
 # This is the entry point of our program
