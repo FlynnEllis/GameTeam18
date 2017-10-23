@@ -1,6 +1,6 @@
 from items import *
 class npc():
-	def __init__ npc(self,name,inventory):
+	def __init__(self,name,inventory):
 		self.name = name
 		self.inventory = inventory
 

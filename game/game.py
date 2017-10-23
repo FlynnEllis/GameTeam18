@@ -1,11 +1,10 @@
 #!/usr/bin/python3
 
+
 from map import rooms
 from player import *
 from items import *
 from gameparser import *
-
-
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
@@ -24,12 +23,7 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
-    itemlist = ""
-    for item in items:
-        itemlist += ", " + item.name
-    itemlist = itemlist[2:]
-
-    return itemlist
+    return ', '.join([item.name for item in items])
 
 
 def print_room_items(room):
@@ -140,7 +134,8 @@ def exit_leads_to(exits, direction):
     >>> exit_leads_to(rooms["Tutor"]["exits"], "west")
     'Reception'
     """
-    return rooms.exits[direction].name
+
+    return rooms[exits[direction]].name
 
 
 def print_exit(direction, leads_to):
@@ -195,7 +190,7 @@ def print_menu(exits, room_items, inv_items):
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
 
-    for item in room_items:
+    for item in current_room.items:
         print("TAKE " + item.name.upper() + " to take " + item.name)
     for item in inv_items:
         print("DROP " + item.name.upper() + " to drop your " + item.name)
@@ -243,11 +238,11 @@ def execute_take(item_id):
     "You cannot take that."
     """
 
-    for key in current_room.items:
-        if item_id == key["id"]: 
-            inventory.append(key)
-            current_room.items.remove(key)
-            print("You have picked up " + key["name"])
+    for item in current_room.items:
+        if item_id == item.id: 
+            inventory.append(item)
+            current_room.items.remove(item)
+            print("You have picked up " + item.name)
     else:
         print("You cannot carry any more items!")
 
@@ -259,10 +254,10 @@ def execute_drop(item_id):
     no such item in the inventory, this function prints "You cannot drop that."
     """
     
-    for key in inventory:
-        if item_id == key["id"]:
-            current_room.items.append(key)
-            inventory.remove(key)
+    for item in inventory:
+        if item_id == item.id:
+            current_room.items.append(item)
+            inventory.remove(item)
             print("You have dropped the item from your iventory")
         else:
             print("You cannot drop that!")
@@ -340,7 +335,8 @@ def move(exits, direction):
     # Next room to go to
     return rooms[exits[direction]]
 
-#def win_condition():
+def win_condition():
+	return False
  #   if current_room == rooms["Office"]:
   #      print("Congratualations you have won!")
    #     return True
@@ -352,13 +348,13 @@ def move(exits, direction):
 def main():
 
     # Main game loop
-    while win_condition() == False:
+    while not win_condition():
         # Display game status (room description, inventory etc.)
         print_room(current_room)
         print_inventory_items(inventory)
 
         # Show the menu with possible actions and ask the player
-        command = menu(current_room["exits"], current_room["items"], inventory)
+        command = menu(current_room.exits, current_room.items, inventory)
 
         # Execute the player's command
         execute_command(command)
