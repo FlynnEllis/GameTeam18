@@ -7,8 +7,8 @@ class item():
 		self.price = price
 		self.units = units
 
-beer_bottle_empty = item('empty beer bottle', 'an empty beer bottle','description',4.2,0,0)
-glass_empty = item('empty glass','an empty glass','description',4.2,0,0)
+beer_bottle_empty = item('bottle', 'an empty beer bottle','description',4.2,0,0)
+glass_empty = item('glass','an empty glass','description',4.2,0,0)
 keys = item('keys','keys','the keys to your flat',0,0,0)
 wallet = item('wallet','wallet','description',0,0,0)
 phone = item('phone','phone','description',0,0,0)
