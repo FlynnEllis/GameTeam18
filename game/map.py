@@ -23,7 +23,7 @@ room_pre_drinks =  room(
 
 room_pre_pre_drinks = room(
     "pre pre drinks",
-    {"leave": 'pre drinks'},
+    {"out": 'pre drinks'},
     [],
     {'john':npc_john},
     """Welcome to the start of the greatest night of your life. 
@@ -68,7 +68,7 @@ room_pryzm =  room(
 
 room_glam =  room(
     "glam",
-    {"north": "student union", "west": "tiger tiger", "south east": "clwb ifor bach", "south west": "revs", "east": "pryzm"},
+    {"north": "student union", "west": "tiger tiger", "southeast": "clwb ifor bach", "southwest": "revs", "east": "pryzm"},
     [],
     [],
     """Welcome to Glam. 
@@ -84,7 +84,7 @@ room_revs =  room(
     [],
     [],
     """Welcome to a club that tries to look posh and sophisticated but is anything but. 
-    The queue is relatively normal and won’t have you dying of thirst by the end. 
+    The queue is relatively normal and will not have you dying of thirst by the end. 
     Once your ID has been checked by 50 machines you finally get in. 
     It appears that the majority of people have been herded toward the back or upstairs like cattle. 
     Although the music seems decent you are aware that the drinks taste cheaper than that guy across the room in his Ralph Lauren shirt and Rebook tracksuit bottoms. 
