@@ -32,7 +32,7 @@ room_pre_pre_drinks = room(
     
 room_your_room = room(
     "your room",
-    {"back":'pre drinks'},
+    {"back":'pre pre drinks'},
     [your_id],
     {},
     """You return to your room, sad and alone.
