@@ -323,7 +323,6 @@ def getkey():
             if c in [b'\xe0']:
                 c = msvcrt.getch()
                 return {b'H': 'up', b'P': 'down'}[c]
-
             elif c  == b'\r':
                 return 'return'
 
