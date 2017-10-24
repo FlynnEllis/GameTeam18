@@ -35,7 +35,11 @@ room_your_room = room(
     {"back":'pre drinks'},
     [],
     {},
-    """you lonely soul""")
+    """You return to your room, sad and alone.
+    You crash onto your bed ands start crying.
+    WHY WOULD YOU GO HOME! 
+    WHO DOES THAT!
+    Game Over, you never go home after pre drinks!""")
 
 room_student_union =  room(
     "student union",
@@ -109,23 +113,30 @@ room_chip_alley =  room(
     {"home": "home"},
     [],
     [],
-    "Insert description here")
+    """ Welcome to Chip Alley, the aroma of different smells hits you from kebabs to cheesey chips to even pizza?
+    None the less this seems like a fine place to finish the night and get food before you head home. 
+    Do you enter the wonderfully endulging takeaways or go home hungry and sad""")
 
 room_mc_donalds =  room(
     "mc donalds",
     {"home": "home"},
     [],
     [],
-    "Insert description here")
+    """ Welcome to Mc Donalds, what many people consider is the root of all evil. 
+    This fine establishjment is packed, the bouncers are making you queue and most people are sat on the floor.
+    Do you choose to risk your colon and ventuire in or go home hungry?""")
 
 room_burger_guy =  room(
     "burger guy",
     {"home": "home"},
     [],
     [],
-    "Insert description here")
+    """ As you leave the SU you notice the usual guy flipping his burgers, with as much finese as your night out.
+    He appears to stare at you like you are his next biggest catch, coiled like a spring he waits for you.
+    Do you endulge thew coiled spring and eat here, or go home starving?""")
 
 #ENDINGS BELOW
+#NEED MORE ENDINGS!
 room_ending =room(
      "home",
      {},
