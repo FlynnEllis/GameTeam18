@@ -26,6 +26,14 @@ def list_of_items(items):
     return ', '.join([item.name for item in items])
 
 
+
+def list_of_npcs(npcs):
+	return ', '.join([npcs[npc].name for npc in npcs])
+
+def print_room_npcs(room):
+	if len(room.npcs) != 0:
+    	print("There is " + list_of_npcs(room.npcs) + " here.\n")
+
 def print_room_items(room):
     """This function takes a room as an input and nicely displays a list of items
     found in this room (followed by a blank line). If there are no items in
@@ -48,8 +56,9 @@ def print_room_items(room):
     Note: <BLANKLINE> here means that doctest should expect a blank line.
 
     """
-    if len(list_of_items(room.items)) != 0:
-        print("There is " + list_of_items(room.items) + " here.\n")
+    if len(room.items) != 0:
+    	print("There is " + list_of_items(room.items) + " here.\n")
+
 
 
 def print_inventory_items(items):
@@ -119,6 +128,7 @@ def print_room(room):
     print(room.description + blank_line)
     # Display items in room
     print_room_items(room)
+    print_room_npcs(room)
 
 
 
@@ -262,8 +272,16 @@ def execute_drop(item_id):
         else:
             print("You cannot drop that!")
 
-    
-    
+def execute_fight(npc,item):
+	current_room.npcs[npc].hp -= item.mass
+  	print(current_room.npcs[npc].hp)
+	if current_room.npcs[npc].hp > 0:
+  		print(current_room.npcs.pop(npc).inventory)
+    	current_room.items +=  current_room.npcs.pop(npc).inventory
+    #return npc
+ 
+ 
+ 
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -293,6 +311,17 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+
+    elif command[0] == "fight":
+    	if len(command) ==1:
+    		print('Fight who?')
+    	elif len(command) == 2:
+
+    		print('Fight '+ command[1] +'with what?')
+    	else:
+    		execute_fight(command[1],inventory[2])
+    		print(current_room.npcs[command[1]].hp)
+
 
     else:
         print("This makes no sense.")
