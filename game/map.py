@@ -58,7 +58,7 @@ room_student_union_bar =  room(
     "student union bar",
     {"south": "student union"},
     [],
-    {},
+    {'Bartender': npc_su_bar},
     """As you lean over the bar to peer into the mini fridge, 
     you find that the only drinks on offer tonight are VKs and they only cost 1. Perfect.
     """)
@@ -80,6 +80,15 @@ room_tiger_tiger_main =  room(
     """You are in the main room of tiger tiger!
     Much to your surprise the normally barren and empty dancefloor is full of people, 
     however floors are a bit sticky so dancing will require a bit more effort than you would like.
+
+    """)
+
+room_tiger_tiger_bar =  room(
+    "tiger tiger bar",
+    {"leave1": "student union", "leave2": "pryzm", "south": "tiger tiger main"},
+    [],
+    {'Bartender': npc_tiger_tiger_bar},
+    """
 
     """)
 
@@ -126,7 +135,7 @@ room_pryzm_bar =  room(
     "pryzm bar",
     {"leave1": "student union", "leave2": "tiger tiger", "south": "pryzm main"},
     [],
-    {},
+    {'Bartender': npc_pryzm_bar},
     """ 
     """)
 
@@ -173,7 +182,7 @@ room_pub_bar =  room(
     "pub bar",
     {"south": "welsh pub"},
     [],
-    {},
+    {'Bartender': npc_welsh_bar},
     """
 
     """)
@@ -258,6 +267,7 @@ rooms = {
 "student union bar": room_student_union_bar,
 "tiger tiger": room_tiger_tiger, 
 "tiger tiger main": room_tiger_tiger_main,
+"tiger tiger bar": room_tiger_tiger_bar,
 "tiger tiger second": room_tiger_tiger_second,
 "tiger tiger toilet": room_tiger_tiger_toilet,
 "smoking area": room_smoking_area,   

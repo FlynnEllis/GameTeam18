@@ -17,4 +17,8 @@ npc_Chuckle_1 = npc('Barry Chuckle',[drugs], 0.0, 10.0)
 npc_Chuckle_2 = npc('Paul Chuckle', [drugs], 0.0, 10.0)
 npc_gaz = npc('Gaz', [], 4.0, 6.0)
 npc_homeless = npc('Homeless man', [beer_bottle_empty], 0.0, 1.0)
+npc_su_bar = npc('Bartender', [vk,vk,vk,vk,vk,vk,vk,vk], 100.0,5.0)
+npc_pryzm_bar= npc('Bartender', [], 200.0,5.0)
+npc_tiger_tiger_bar = npc('Bartender', [], 100.0,5.0)
+npc_welsh_bar = npc('Bartender', [pint_brains], 50.0,10.0)
 
