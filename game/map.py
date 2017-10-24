@@ -23,15 +23,19 @@ room_pre_drinks =  room(
 
 room_pre_pre_drinks = room(
     "pre pre drinks",
-    {"out": 'pre drinks'},
+    {"out": 'pre drinks', "into": "your room"},
     [],
     {'john':npc_john},
     """Welcome to the start of the greatest night of your life. 
     You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
     Before you leave you should select some belongings that will help you along the way.""")
     
-    
-
+room_your_room = room(
+    "your room",
+    {"back":'pre drinks'},
+    [],
+    {},
+    """description""")
 
 room_student_union =  room(
     "student union",
@@ -131,6 +135,7 @@ room_ending =room(
 
 
 rooms = {
+"your room": room_your_room,
 'pre pre drinks': room_pre_pre_drinks,
 "pre drinks":room_pre_drinks,
    "student union":room_student_union, 
@@ -145,4 +150,5 @@ rooms = {
     
 "mc donalds":room_mc_donalds, 
 "burger guy":room_burger_guy}
-   
+
+
