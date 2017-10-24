@@ -6,9 +6,11 @@ class item():
 		self.mass = mass
 		self.price = price
 		self.units = units
-
 beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0,0)
 glass_empty = item('glass','an empty glass','A relic of times gone by.',4.2,0,0)
+vodka_bottle_empty = item('vodka bottle', 'an empty vodka bottle', 'description', 6,0,0)
+beer_bottle_empty = item('bottle', 'an empty beer bottle','description',6,0,0)
+glass_empty = item('glass','an empty glass','description',4.2,0,0)
 keys = item('keys','keys','the keys to your flat',0,0,0)
 wallet = item('wallet','wallet','',0,0,0)
 phone = item('phone','phone','Your gateway to a Dragon taxi home.',0,0,0)
@@ -40,3 +42,4 @@ bigmac = item('bigmac','bigmac','The top dog.',4.2,3,-2)
 mcflurry = item('mcflurry','mcflurry','To cool down after a busy night.',4.2,1,0)
 kebab = item('kebab','kebab','Magical mystery meet.',4.2,3,-2)
 a_cheeky_wink = item('wink','a cheeky wink', 'this wink will sure be successful',0,0,0)
+irish_disco_biscuit = item('irish disco biscuit','irish disco biscuit','I think I know someone who would enjoy this...',4,4,3)
