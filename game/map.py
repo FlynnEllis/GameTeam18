@@ -44,7 +44,7 @@ room_your_room = room(
 
 room_student_union =  room(
     "student union",
-    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "su bar"},
+    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "student unuion bar"},
     [],
     {'Jill' : npc_jill},
     """You have arrived at the Student Union. 
