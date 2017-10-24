@@ -23,7 +23,7 @@ room_pre_drinks =  room(
 
 room_pre_pre_drinks = room(
     "pre pre drinks",
-    {"out": 'pre drinks', "into": "your room"},
+    {"out": 'pre drinks', "in": "your room"},
     [],
     {'john':npc_john},
     """Welcome to the start of the greatest night of your life. 
@@ -35,7 +35,7 @@ room_your_room = room(
     {"back":'pre drinks'},
     [],
     {},
-    """description""")
+    """you lonely soul""")
 
 room_student_union =  room(
     "student union",
