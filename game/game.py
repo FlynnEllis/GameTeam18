@@ -28,10 +28,10 @@ def list_of_items(items):
 
 
 def list_of_npcs(npcs):
-	return ', '.join([npcs[npc].name for npc in npcs])
+    return ', '.join([npcs[npc].name for npc in npcs])
 
 def print_room_npcs(room):
-	if len(room.npcs) != 0:
+    if len(room.npcs) != 0:
     	print("There is " + list_of_npcs(room.npcs) + " here.\n")
 
 def print_room_items(room):
@@ -273,10 +273,10 @@ def execute_drop(item_id):
             print("You cannot drop that!")
 
 def execute_fight(npc,item):
-	current_room.npcs[npc].hp -= item.mass
-  	print(current_room.npcs[npc].hp)
-	if current_room.npcs[npc].hp > 0:
-  		print(current_room.npcs.pop(npc).inventory)
+    current_room.npcs[npc].hp -= item.mass
+    print(current_room.npcs[npc].hp)
+    if current_room.npcs[npc].hp > 0:
+    	print(current_room.npcs.pop(npc).inventory)
     	current_room.items +=  current_room.npcs.pop(npc).inventory
     #return npc
  
@@ -365,7 +365,7 @@ def move(exits, direction):
     return rooms[exits[direction]]
 
 def win_condition():
-	return False
+    return False
  #   if current_room == rooms["Office"]:
   #      print("Congratualations you have won!")
    #     return True
