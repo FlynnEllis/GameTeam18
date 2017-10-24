@@ -1,3 +1,33 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Marketplace
+    Explore
+
+    @jakegolledge
+
+5
+0
+
+    0
+
+FlynnEllis/GameTeam18
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Wiki
+Insights
+GameTeam18/game/map.py
+3b8ace8 a minute from now
+@FlynnEllis FlynnEllis Changed directions
+@JoeDinn
+@FlynnEllis
+@SirStudMuffin
+149 lines (126 sloc) 5.86 KB
 from items import *
 from npcs import *
 
@@ -23,7 +53,7 @@ room_pre_drinks =  room(
 
 room_pre_pre_drinks = room(
     "pre pre drinks",
-    {"leave": 'pre drinks'},
+    {"out": 'pre drinks', "into","your room "},
     [],
     {'john':npc_john},
     """Welcome to the start of the greatest night of your life. 
@@ -31,6 +61,12 @@ room_pre_pre_drinks = room(
     Before you leave you should select some belongings that will help you along the way.""")
     
     
+room_your_room = room(
+    "your room",
+    {"back":'pre drinks'}
+    []
+    {}
+    """description""")
 
 
 room_student_union =  room(
@@ -68,7 +104,7 @@ room_pryzm =  room(
 
 room_glam =  room(
     "glam",
-    {"north": "student union", "west": "tiger tiger", "south east": "clwb ifor bach", "south west": "revs", "east": "pryzm"},
+    {"north": "student union", "west": "tiger tiger", "southeast": "clwb ifor bach", "southwest": "revs", "east": "pryzm"},
     [],
     [],
     """Welcome to Glam. 
@@ -84,7 +120,7 @@ room_revs =  room(
     [],
     [],
     """Welcome to a club that tries to look posh and sophisticated but is anything but. 
-    The queue is relatively normal and won’t have you dying of thirst by the end. 
+    The queue is relatively normal and will not have you dying of thirst by the end. 
     Once your ID has been checked by 50 machines you finally get in. 
     It appears that the majority of people have been herded toward the back or upstairs like cattle. 
     Although the music seems decent you are aware that the drinks taste cheaper than that guy across the room in his Ralph Lauren shirt and Rebook tracksuit bottoms. 
@@ -131,6 +167,7 @@ room_ending =room(
 
 
 rooms = {
+"your room": room_your_room,
 'pre pre drinks': room_pre_pre_drinks,
 "pre drinks":room_pre_drinks,
    "student union":room_student_union, 
@@ -145,4 +182,5 @@ rooms = {
     
 "mc donalds":room_mc_donalds, 
 "burger guy":room_burger_guy}
-   
+
+
