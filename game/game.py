@@ -25,7 +25,15 @@ def list_of_items(items):
     """
     return ', '.join([item.name for item in items])
 
-
+def inventory_mass(inventory):
+    
+    inv_mass = 0
+    
+    for item in inventory:
+        inv_mass = inv_mass + float(item.mass)
+    inv_mass = round(inv_mass, 3)
+    print("You're carrying", inv_mass, "kg.")     
+    return inv_mass
 
 def list_of_npcs(npcs):
     return ', '.join([npcs[npc].name for npc in npcs])
@@ -73,7 +81,7 @@ def print_inventory_items(items):
     """
     if len(items) !=0:
         print("You have " + list_of_items(items) + ".\n")
-
+    inventory_mass(inventory)
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
@@ -251,7 +259,10 @@ def execute_take(item_id):
     """
     try:
         item_id = [item.id for item in current_room.items].index(item_id)
-        
+        if (item["mass"] + inv_mass) > 20.0:
+            inventory.remove(item)
+            current_room["items"].append(item)
+            print(("Inventory full!").upper())
         
         inventory.append(current_room.items.pop(item_id))
 
