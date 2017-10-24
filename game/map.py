@@ -75,39 +75,39 @@ room_pryzm =  room(
     The club is packed and there is a lot of creepy guys grabbing girls everywhere without consent. 
     If you would like to join in and lose all sense of pride and eventually enter the depths of hell, proceed and enter to the bar or leave for another club.""")
 
-room_glam =  room(
-    "glam",
-    {"north": "student union", "west": "tiger tiger", "southeast": "clwb ifor bach", "southwest": "revs", "east": "pryzm"},
-    [],
-    [],
-    """Welcome to Glam. 
-    (I am trying to hype this place up but we all really know how bad it is). 
-    The party is electrifying and its one of the best places you haveve ever been. 
-    (can you smell that sarcasm or is that the toilets). 
-    What am I joking this place is normally barren with somewhat decent drinks. 
-    You can choose to enter and forever question why you entered, or leave for another life of luxury?""")
+#room_glam =  room(
+#    "glam",
+#    {"north": "student union", "west": "tiger tiger", "southeast": "clwb ifor bach", "southwest": "revs", "east": "pryzm"},
+#    [],
+#    [],
+#    """Welcome to Glam. 
+#    (I am trying to hype this place up but we all really know how bad it is). 
+#    The party is electrifying and its one of the best places you haveve ever been. 
+#    (can you smell that sarcasm or is that the toilets). 
+#    What am I joking this place is normally barren with somewhat decent drinks. 
+#    You can choose to enter and forever question why you entered, or leave for another life of luxury?""")
 
-room_revs =  room(
-    "revs",
-    {"north": "tiger tiger", "west": "glam", "south": "clwb ifor bach"},
-    [],
-    [],
-    """Welcome to a club that tries to look posh and sophisticated but is anything but. 
-    The queue is relatively normal and will not have you dying of thirst by the end. 
-    Once your ID has been checked by 50 machines you finally get in. 
-    It appears that the majority of people have been herded toward the back or upstairs like cattle. 
-    Although the music seems decent you are aware that the drinks taste cheaper than that guy across the room in his Ralph Lauren shirt and Rebook tracksuit bottoms. 
-    Do you enter at your own risk or leave for another club?""")
+#room_revs =  room(
+#    "revs",
+#    {"north": "tiger tiger", "west": "glam", "south": "clwb ifor bach"},
+#    [],
+#    [],
+#    """Welcome to a club that tries to look posh and sophisticated but is anything but. 
+#    The queue is relatively normal and will not have you dying of thirst by the end. 
+#    Once your ID has been checked by 50 machines you finally get in. 
+#    It appears that the majority of people have been herded toward the back or upstairs like cattle. 
+#    Although the music seems decent you are aware that the drinks taste cheaper than that guy across the room in his Ralph Lauren shirt and Rebook tracksuit bottoms. 
+#    Do you enter at your own risk or leave for another club?""")
 
-room_clwb_ifor_bach = room(
-    "clwb ifor bach",
-    {"north": "pryzm", "west": "glam", "south": "revs"},
-    [],
-    [],
-    """Welcome to the hottest club on the map. No, it is not full of Britains next top models. 
-    It is more like a sauna full of sweaty men trying to dance. 
-    The floor looks more like an Olympic swimming pool than somewhere you would bust and move and make those shapes to impress that girl who always rejects you. 
-    Do you pull up your swimming trunks and doggy paddle in or leave before you get soaked?""")
+#room_clwb_ifor_bach = room(
+#    "clwb ifor bach",
+#    {"north": "pryzm", "west": "glam", "south": "revs"},
+#    [],
+#    [],
+#    """Welcome to the hottest club on the map. No, it is not full of Britains next top models. 
+#    It is more like a sauna full of sweaty men trying to dance. 
+#    The floor looks more like an Olympic swimming pool than somewhere you would bust and move and make those shapes to impress that girl who always rejects you. 
+#    Do you pull up your swimming trunks and doggy paddle in or leave before you get soaked?""")
 
 room_chip_alley =  room(
     "chip alley",
@@ -154,9 +154,9 @@ rooms = {
 "tiger tiger":room_tiger_tiger, 
     
 "pryzm":room_pryzm, 
- "glam":room_glam, 
-"revs":room_revs,  
- "clwb ifor bach":room_clwb_ifor_bach,
+#"glam":room_glam, 
+#"revs":room_revs,  
+#"clwb ifor bach":room_clwb_ifor_bach,
     
 "chip alley":room_chip_alley,  
     
