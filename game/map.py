@@ -13,7 +13,7 @@ room_pre_drinks =  room(
     "pre drinks",
     {"south": "student union", "east": "tiger tiger", "west": "pryzm", "home": "your room"},
     [], #items
-    [], #npcs
+    {}, #npcs
     """You arrive at pre drinks, the room is full of vodka, testosterone and bad life decisions. 
     Apart from everyone having a crippling university debt the room seems to be in good spirits. 
     The music in the room appears to be Grime Time, which you should have expected by now. 
@@ -44,7 +44,7 @@ room_your_room = room(
 
 room_student_union =  room(
     "student union",
-    { "west": "tiger tiger", "east": "pryzm", "south": "glam"},
+    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "su bar"},
     [],
     {'Jill' : npc_jill},
     """You have arrived at the Student Union. 
@@ -54,26 +54,130 @@ room_student_union =  room(
     The music appears to be 80s hits, which you seem to enjoy.
     Do you make your way to the bar or leave to go to another club?""")
 
+room_student_union_bar =  room(
+    "su bar",
+    {"south": "student union"},
+    [],
+    {},
+    """As you lean over the bar to peer into the mini fridge, 
+    you find that the only drinks on offer tonight are VKs and they only cost 1. Perfect.
+    """)
+
 room_tiger_tiger =  room(
-    "tiger tiger",
-    {"north": "student union", "east": "glam", "south": "revs"},
+    "tiger tiger entrance",
+    {"leave1": "student union", "leave2": "pryzm", "upstairs": "tiger tiger main"},
     [],
-    [],
-    """You arrive at the ever hyped but always a huge disappointment called Tiger Tiger. 
+    {},
+    """You arrive at the ever hyped but always dissapointing Tiger Tiger. 
     The queue is as short as your life expectancy so you enter straight away. 
-    Much to your surprise the normally barren and empty dancefloor much like your soul is full of people. 
     The atmosphere seems to have a sort of life to it although what that life is you are never sure. You can choose to enter this uncommon occurrence or leave for yet another cesspool. """)
 
-room_pryzm =  room(
-    "pryzm",
-    {"north": "student union", "west": "glam", "south": "clwb ifor bach"},
+room_tiger_tiger_main =  room(
+    "tiger tiger main",
+    {"leave1": "student union", "leave2": "pryzm", "downstairs": "tiger tiger entrance", "east": "tiger tiger second"},
     [],
-    {'Barry Chuckle' : npc_Chuckle_1, 'Paul Chuckle' : npc_Chuckle_2},
+    {},
+    """You are in the main room of tiger tiger!
+    Much to your surprise the normally barren and empty dancefloor is full of people, 
+    however floors are a bit sticky so dancing will require a bit more effort than you would like.
+
+    """)
+
+room_tiger_tiger_second =  room(
+    "tiger tiger second",
+    {"leave1": "student union", "leave2": "pryzm", "west": "tiger tiger main", "east": "smoking area", "south": "tiger tiger toilet"},
+    [],
+    {},
+    """You enter the second room in tiger tiger.
+    its kinda like the other one but the floors arent as sticky this time.
+
+    """)
+
+room_tiger_tiger_toilet =  room(
+    "tiger tiger toilet",
+    {"leave1": "student union", "leave2": "pryzm", "north": "tiger tiger second"},
+    [],
+    {},
+    """
+
+    """)
+
+room_smoking_area =  room(
+    "smoking area",
+    {"west": "tiger tiger second"},
+    [],
+    {},
+    """You dont want to do that do you? Smoking is bad remember!
+
+    """)
+
+room_pryzm =  room(
+    "pryzm entrance",
+    {"leave1": "student union", "leave2": "tiger tiger", "upstairs": "pryzm main"},
+    [],
+    {},
     """You arrive at Pryzm. 
-    You join the queue that was so long you started to question your life decisions. 
+    The queue was so long you started to question your life decisions. 
     As you finally get into the club, you see two things: 
     The club is packed and there is a lot of creepy guys grabbing girls everywhere without consent. 
     If you would like to join in and lose all sense of pride and eventually enter the depths of hell, proceed and enter to the bar or leave for another club.""")
+
+room_pryzm_bar =  room(
+    "pryzm bar",
+    {"leave1": "student union", "leave2": "tiger tiger", "south": "pryzm main"},
+    [],
+    {},
+    """ 
+    """)
+
+room_pryzm_main =  room(
+    "pryzm main",
+    {"leave1": "student union", "leave2": "tiger tiger", "west": "pryzm disco", "north": "bar", "south": "toilet","downstairs": "pryzm"},
+    [],
+    {'Barry Chuckle' : npc_Chuckle_1, 'Paul Chuckle' : npc_Chuckle_2},
+    """Welcome to the main floor 
+    (something funny), in the corner you spot two odd looking men with moustaches taking pictures with everyone.
+    """)
+
+room_pryzm_disco =  room(
+    "pryzm disco",
+    {"leave1": "student union", "leave2": "tiger tiger", "east": "pryzm main", "north": "bar"},
+    [],
+    {},
+    """
+
+    """)
+
+room_pryzm_toilet=  room(
+    "pryzm toilet",
+    {"leave1": "student union", "leave2": "tiger tiger", "north": "pryzm main"},
+    [],
+    {},
+    """
+
+    """)
+
+room_welsh_pub =  room(
+    "welsh pub",
+    {"north": "pub bar", "ouside": "river"},
+    [],
+    {},
+    """You have somehow ended up in a welsh pub.
+    The room is full of balding middle aged men that all seem to be glaring at you.
+    They know you dont belong here. 
+    You know you dont belong here.
+
+    """)
+
+room_pub_bar =  room(
+    "pub bar",
+    {"south": "welsh pub"},
+    [],
+    {},
+    """
+
+    """)
+
 
 #room_glam =  room(
 #    "glam",
