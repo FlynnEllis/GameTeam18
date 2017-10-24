@@ -11,7 +11,7 @@ class room():
 
 room_pre_drinks =  room( 
     "pre drinks",
-    {"south": "student union", "east": "tiger tiger", "west": "pryzm"},
+    {"south": "student union", "east": "tiger tiger", "west": "pryzm", "home": "your room"},
     [],
     [],
     """You arrive at pre drinks, the room is full of vodka, testosterone and bad life decisions. 
