@@ -55,7 +55,7 @@ room_student_union =  room(
     Do you make your way to the bar or leave to go to another club?""")
 
 room_student_union_bar =  room(
-    "su bar",
+    "student union bar",
     {"south": "student union"},
     [],
     {},
