@@ -30,14 +30,12 @@ room_pre_pre_drinks = room(
     You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
     Before you leave you should select some belongings that will help you along the way.""")
     
-    
 room_your_room = room(
     "your room",
     {"back":'pre drinks'}
     []
     {}
     """description""")
-
 
 room_student_union =  room(
     "student union",
