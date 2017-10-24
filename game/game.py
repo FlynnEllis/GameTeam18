@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+from os import system 
 
 from map import rooms
 from player import *
@@ -249,14 +249,14 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
+    try:
+        item_id = [item.id for item in current_room.items].index(item_id)
+        
+        
+        inventory.append(current_room.items.pop(item_id))
 
-    for item in current_room.items:
-        if item_id == item.id: 
-            inventory.append(item)
-            current_room.items.remove(item)
-            print("You have picked up " + item.name)
-    else:
-        print("You cannot carry any more items!")
+    except ValueError:
+        print('You cannot take that')
 
     
 
@@ -266,20 +266,20 @@ def execute_drop(item_id):
     no such item in the inventory, this function prints "You cannot drop that."
     """
     
-    for item in inventory:
-        if item_id == item.id:
-            current_room.items.append(item)
-            inventory.remove(item)
-            print("You have dropped the item from your iventory")
-        else:
-            print("You cannot drop that!")
+    try:
+        current_room.items.append(inventory.pop([item.id for item in inventory].index(item_id)))
+    except ValueError:
+        print('You cannot drop that')
 
 def execute_fight(npc,item):
-    current_room.npcs[npc].hp -= item.mass
-    print(current_room.npcs[npc].hp)
-    if current_room.npcs[npc].hp > 0:
-    	print(current_room.npcs.pop(npc).inventory)
-    	current_room.items +=  current_room.npcs.pop(npc).inventory
+    try:
+        current_room.npcs[npc].hp -= item.mass
+        print(current_room.npcs[npc].hp)
+        if current_room.npcs[npc].hp > 0:
+            print(current_room.npcs.pop(npc).inventory)
+            current_room.items +=  current_room.npcs.pop(npc).inventory
+    except KeyError:
+        print(npc[0].upper() + npc[1:] + ' is not in the room')
     #return npc
  
  
@@ -322,7 +322,7 @@ def execute_command(command):
     		print('Fight '+ command[1] +'with what?')
     	else:
     		execute_fight(command[1],inventory[2])
-    		print(current_room.npcs[command[1]].hp)
+    		
 
 
     else:
@@ -381,6 +381,7 @@ def main():
     # Main game loop
     while not win_condition():
         # Display game status (room description, inventory etc.)
+        system('cls')
         print_room(current_room)
         print_inventory_items(inventory)
 
