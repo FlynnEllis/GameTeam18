@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from os import system 
-
+import msvcrt
 from map import rooms
 from player import *
 from items import *
@@ -207,7 +207,6 @@ def print_menu(exits, room_items, inv_items):
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
-
     for item in current_room.items:
         print("TAKE " + item.id.upper() + " to take " + item.name)
     for item in inv_items:
@@ -286,14 +285,54 @@ def execute_fight(npc,item):
     try:
         current_room.npcs[npc].hp -= item.mass
         print(current_room.npcs[npc].hp)
-        if current_room.npcs[npc].hp > 0:
-            print(current_room.npcs.pop(npc).inventory)
+        if current_room.npcs[npc].hp <= 0:
+            print(current_room.npcs[npc].inventory)
+            input()
             current_room.items +=  current_room.npcs.pop(npc).inventory
     except KeyError:
         print(npc[0].upper() + npc[1:] + ' is not in the room')
     #return npc
  
+def print_chat_options(options,cursor):
+    for index in range(len(options)):
+        if index == cursor:
+            print('{ '+ options[index] +' }')
+        else:
+            print('  ' + options[index])
  
+def navigate_chat_options(options,cursor):
+    system('cls')
+    print_chat_options(options,cursor)
+    key = getkey()
+    while 1:
+        if key == 'up':
+            return navigate_chat_options(options,cursor -1)
+        elif key == 'down':
+            return navigate_chat_options(options,cursor +1)
+        else:
+            return cursor
+        key = getkey()
+ 
+ 
+ 
+def getkey():
+    while True:
+        if msvcrt.kbhit():        
+            c = msvcrt.getch()
+
+            if c in [b'\xe0']:
+                c = msvcrt.getch()
+                return {b'H': 'up', b'P': 'down'}[c]
+
+            elif c  == b'\r':
+                return 'return'
+
+def execute_talk(npc):
+    print(navigate_chat_options(current_room.npcs[npc].lines,0))
+
+def execute_look(item):
+    print('')
+    input()
  
 
 def execute_command(command):
@@ -331,9 +370,19 @@ def execute_command(command):
 
     		print('Fight '+ command[1] +'with what?')
     	else:
-    		execute_fight(command[1],inventory[2])
+    		execute_fight(command[1],inventory[0])
     		
+    elif command[0] == "talk":
+        if len(command) > 1:
+            execute_talk(command[1])
+        else:
+            print("Talk to who?")
 
+    elif command[0] == 'look':
+        if len(command) > 1:
+            execute_look(command[1])
+        else:
+            print("Look at what?")
 
     else:
         print("This makes no sense.")
