@@ -201,9 +201,9 @@ def print_menu(exits, room_items, inv_items):
         print_exit(direction, exit_leads_to(exits, direction))
 
     for item in current_room.items:
-        print("TAKE " + item.name.upper() + " to take " + item.name)
+        print("TAKE " + item.id.upper() + " to take " + item.name)
     for item in inv_items:
-        print("DROP " + item.name.upper() + " to drop your " + item.name)
+        print("DROP " + item.id.upper() + " to drop your " + item.name)
     for npc in current_room.npcs:
         print("FIGHT " + current_room.npcs[npc].name.upper() + " to fight " + current_room.npcs[npc].name.upper())
     
