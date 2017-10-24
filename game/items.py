@@ -6,7 +6,7 @@ class item():
 		self.mass = mass
 		self.price = price
 		self.units = units
-bodka_bottle_empty = item('vodka bottle', 'an empty vodka bottle', 'description', 6,0,0)
+vodka_bottle_empty = item('vodka bottle', 'an empty vodka bottle', 'description', 6,0,0)
 beer_bottle_empty = item('bottle', 'an empty beer bottle','description',6,0,0)
 glass_empty = item('glass','an empty glass','description',4.2,0,0)
 keys = item('keys','keys','the keys to your flat',0,0,0)
