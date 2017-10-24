@@ -64,7 +64,7 @@ room_student_union_bar =  room(
     """)
 
 room_tiger_tiger =  room(
-    "tiger tiger entrance",
+    "tiger tiger",
     {"leave1": "student union", "leave2": "pryzm", "upstairs": "tiger tiger main"},
     [],
     {},
@@ -112,7 +112,7 @@ room_smoking_area =  room(
     """)
 
 room_pryzm =  room(
-    "pryzm entrance",
+    "pryzm",
     {"leave1": "student union", "leave2": "tiger tiger", "upstairs": "pryzm main"},
     [],
     {},
@@ -256,12 +256,12 @@ rooms = {
 "pre drinks": room_pre_drinks,
 "student union": room_student_union,
 "student union bar": room_student_union_bar,
-"tiger tiger entrance": room_tiger_tiger, 
+"tiger tiger": room_tiger_tiger, 
 "tiger tiger main": room_tiger_tiger_main,
 "tiger tiger second": room_tiger_tiger_second,
 "tiger tiger toilet": room_tiger_tiger_toilet,
 "smoking area": room_smoking_area,   
-"pryzm entrance":room_pryzm,
+"pryzm":room_pryzm,
 "pryzm bar": room_pryzm_bar,
 "pryzm main": room_pryzm_main,
 "pryzm disco": room_pryzm_disco,
