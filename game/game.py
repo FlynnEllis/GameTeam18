@@ -204,6 +204,8 @@ def print_menu(exits, room_items, inv_items):
         print("TAKE " + item.name.upper() + " to take " + item.name)
     for item in inv_items:
         print("DROP " + item.name.upper() + " to drop your " + item.name)
+    for npc in current_room.npcs:
+        print("FIGHT " + current_room.npcs[npc].name.upper() + " to fight " + current_room.npcs[npc].name.upper())
     
     print("What do you want to do?")
 
