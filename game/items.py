@@ -39,4 +39,4 @@ chips = item('chips','chips','description',4.2,2,-2)
 bigmac = item('bigmac','bigmac','description',4.2,3,-2)
 mcflurry = item('mcflurry','mcflurry','description',4.2,1,0)
 kebab = item('kebab','kebab','description',4.2,3,-2)
-
+irish_disco_biscuit = item('irish disco biscuit','irish disco biscuit','description',4,4,3)
