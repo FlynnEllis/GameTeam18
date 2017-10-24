@@ -44,7 +44,7 @@ room_your_room = room(
 
 room_student_union =  room(
     "student union",
-    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "student unuion bar"},
+    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "student union bar"},
     [],
     {'Jill' : npc_jill},
     """You have arrived at the Student Union. 
@@ -253,11 +253,22 @@ room_ending =room(
 rooms = {
 "your room": room_your_room,
 'pre pre drinks': room_pre_pre_drinks,
-"pre drinks":room_pre_drinks,
-   "student union":room_student_union, 
-"tiger tiger":room_tiger_tiger, 
-    
-"pryzm":room_pryzm, 
+"pre drinks": room_pre_drinks,
+"student union": room_student_union,
+"student union bar": room_student_union_bar,
+"tiger tiger entrance": room_tiger_tiger, 
+"tiger tiger main": room_tiger_tiger_main,
+"tiger tiger second": room_tiger_tiger_second,
+"tiger tiger toilet": room_tiger_tiger_toilet,
+"smoking area": room_smoking_area,   
+"pryzm entrance":room_pryzm,
+"pryzm bar": room_pryzm_bar,
+"pryzm main": room_pryzm_main,
+"pryzm disco": room_pryzm_disco,
+"pryzm toilet": room_pryzm_toilet,
+"welsh pub": room_welsh_pub,
+"pub bar": room_pub_bar,
+
 #"glam":room_glam, 
 #"revs":room_revs,  
 #"clwb ifor bach":room_clwb_ifor_bach,
