@@ -109,14 +109,14 @@ room_pryzm =  room(
 #    The floor looks more like an Olympic swimming pool than somewhere you would bust and move and make those shapes to impress that girl who always rejects you. 
 #    Do you pull up your swimming trunks and doggy paddle in or leave before you get soaked?""")
 
-room_chip_alley =  room(
-    "chip alley",
-    {"home": "home"},
-    [],
-    [],
-    """ Welcome to Chip Alley, the aroma of different smells hits you from kebabs to cheesey chips to even pizza?
-    None the less this seems like a fine place to finish the night and get food before you head home. 
-    Do you enter the wonderfully endulging takeaways or go home hungry and sad""")
+#room_chip_alley =  room(
+#    "chip alley",
+#    {"home": "home"},
+#    [],
+#    [],
+#    """ Welcome to Chip Alley, the aroma of different smells hits you from kebabs to cheesey chips to even pizza?
+#    None the less this seems like a fine place to finish the night and get food before you head home. 
+#    Do you enter the wonderfully endulging takeaways or go home hungry and sad""")
 
 room_mc_donalds =  room(
     "mc donalds",
@@ -158,7 +158,7 @@ rooms = {
 #"revs":room_revs,  
 #"clwb ifor bach":room_clwb_ifor_bach,
     
-"chip alley":room_chip_alley,  
+#"chip alley":room_chip_alley,  
     
 "mc donalds":room_mc_donalds, 
 "burger guy":room_burger_guy}
