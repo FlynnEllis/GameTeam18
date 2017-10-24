@@ -74,7 +74,7 @@ room_tiger_tiger =  room(
 
 room_tiger_tiger_main =  room(
     "tiger tiger main",
-    {"leave1": "student union", "leave2": "pryzm", "downstairs": "tiger tiger entrance", "east": "tiger tiger second"},
+    {"leave1": "student union", "leave2": "pryzm", "downstairs": "tiger tiger", "east": "tiger tiger second"},
     [],
     {},
     """You are in the main room of tiger tiger!
