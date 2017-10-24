@@ -81,7 +81,7 @@ def print_inventory_items(items):
     """
     if len(items) !=0:
         print("You have " + list_of_items(items) + ".\n")
-    inventory_mass(inventory)
+
 
 def print_room(room):
     """This function takes a room as an input and nicely displays its name
@@ -258,12 +258,10 @@ def execute_take(item_id):
     """
     try:
         item_id = [item.id for item in current_room.items].index(item_id)
-        if (item["mass"] + inv_mass) > 20.0:
-            inventory.remove(item)
-            current_room["items"].append(item)
+        if (current_room.items[item_id].mass +  inventory_mass(inventory)) > 20:
             print(("Inventory full!").upper())
-        
-        inventory.append(current_room.items.pop(item_id))
+        else:
+            inventory.append(current_room.items.pop(item_id))
 
     except ValueError:
         print('You cannot take that')
