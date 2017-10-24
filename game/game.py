@@ -207,7 +207,6 @@ def print_menu(exits, room_items, inv_items):
     for direction in exits:
         # Print the exit name and where it leads to
         print_exit(direction, exit_leads_to(exits, direction))
-
     for item in current_room.items:
         print("TAKE " + item.id.upper() + " to take " + item.name)
     for item in inv_items:
@@ -286,8 +285,9 @@ def execute_fight(npc,item):
     try:
         current_room.npcs[npc].hp -= item.mass
         print(current_room.npcs[npc].hp)
-        if current_room.npcs[npc].hp > 0:
-            print(current_room.npcs.pop(npc).inventory)
+        if current_room.npcs[npc].hp <= 0:
+            print(current_room.npcs[npc].inventory)
+            input()
             current_room.items +=  current_room.npcs.pop(npc).inventory
     except KeyError:
         print(npc[0].upper() + npc[1:] + ' is not in the room')
@@ -371,7 +371,7 @@ def execute_command(command):
 
     		print('Fight '+ command[1] +'with what?')
     	else:
-    		execute_fight(command[1],inventory[2])
+    		execute_fight(command[1],inventory[0])
     		
     elif command[0] == "talk":
         if len(command) > 1:
