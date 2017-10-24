@@ -280,17 +280,34 @@ def execute_drop(item_id):
         print('You cannot drop that')
 
 def execute_fight(npc,item):
+    #print(item,inventory)
     try:
-        current_room.npcs[npc].hp -= item.mass
-        print(current_room.npcs[npc].hp)
-        if current_room.npcs[npc].hp <= 0:
-            print(current_room.npcs[npc].inventory)
-            input()
-            current_room.items +=  current_room.npcs.pop(npc).inventory
+        your_weapon = inventory[[item.id for item in inventory].index(item)]
+    except ValueError:
+        print('You don\'t have ' + item)
+        return
+    try:
+        victim = current_room.npcs[npc]
     except KeyError:
         print(npc[0].upper() + npc[1:] + ' is not in the room')
+        return
+
+    if (victim.hp // your_weapon.mass) + 1 < (hp // victim.inventory[0].mass) + 1:
+
+
+        current_room.items +=  current_room.npcs.pop(npc).inventory
+        system('cls')
+        print('You have knocked out ' + npc)
+        input()
+    else:
+        return
+
+    
+
     #return npc
- 
+
+
+
 def print_chat_options(options,cursor):
     for index in range(len(options)):
         if index == cursor:
@@ -367,7 +384,7 @@ def execute_command(command):
 
     		print('Fight '+ command[1] +'with what?')
     	else:
-    		execute_fight(command[1],inventory[0])
+    		execute_fight(command[1],command[2])
     		
     elif command[0] == "talk":
         if len(command) > 1:
