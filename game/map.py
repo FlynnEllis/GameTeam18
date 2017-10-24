@@ -24,13 +24,9 @@ room_pre_drinks =  room(
 room_pre_pre_drinks = room(
     "pre pre drinks",
     {"out": 'pre drinks', "in": "your room"},
-<<<<<<< HEAD
     [],
-    {'John':npc_john},
-=======
-    [wallet, your_id, keys],
     {'john':npc_john},
->>>>>>> 39ba6e9f862ef6761ed4a09ad824e9d75af9f006
+
     """Welcome to the start of the greatest night of your life. 
     You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
     Before you leave you should select some belongings that will help you along the way.""")
@@ -38,7 +34,7 @@ room_pre_pre_drinks = room(
 room_your_room = room(
     "your room",
     {"back":'pre pre drinks'},
-    [your_id],
+    [wallet, your_id, keys],
     {},
     """You return to your room, sad and alone.
     You crash onto your bed ands start crying.
