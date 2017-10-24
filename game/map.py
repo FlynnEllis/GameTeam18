@@ -32,9 +32,9 @@ room_pre_pre_drinks = room(
     
 room_your_room = room(
     "your room",
-    {"back":'pre drinks'}
-    []
-    {}
+    {"back":'pre drinks'},
+    [],
+    {},
     """description""")
 
 room_student_union =  room(
