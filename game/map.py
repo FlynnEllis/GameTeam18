@@ -12,8 +12,8 @@ class room():
 room_pre_drinks =  room( 
     "pre drinks",
     {"south": "student union", "east": "tiger tiger", "west": "pryzm", "home": "your room"},
-    [],
-    [],
+    [], #items
+    [], #npcs
     """You arrive at pre drinks, the room is full of vodka, testosterone and bad life decisions. 
     Apart from everyone having a crippling university debt the room seems to be in good spirits. 
     The music in the room appears to be Grime Time, which you should have expected by now. 
@@ -25,7 +25,7 @@ room_pre_pre_drinks = room(
     "pre pre drinks",
     {"out": 'pre drinks', "in": "your room"},
     [],
-    {'john':npc_john},
+    {'John':npc_john},
     """Welcome to the start of the greatest night of your life. 
     You have received an invitation to the biggest bar crawl in Cardiff which includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
     Before you leave you should select some belongings that will help you along the way.""")
@@ -45,7 +45,7 @@ room_student_union =  room(
     "student union",
     { "west": "tiger tiger", "east": "pryzm", "south": "glam"},
     [],
-    [],
+    {'Jill' : npc_jill},
     """You have arrived at the Student Union. 
     After queueing for what seemed 3 decades you have arrived at the main dance floor. 
     It appears that a foam party is happening on this particular night. 
@@ -67,7 +67,7 @@ room_pryzm =  room(
     "pryzm",
     {"north": "student union", "west": "glam", "south": "clwb ifor bach"},
     [],
-    [],
+    {'Barry Chuckle' : npc_Chuckle_1, 'Paul Chuckle' : npc_Chuckle_2},
     """You arrive at Pryzm. 
     You join the queue that was so long you started to question your life decisions. 
     As you finally get into the club, you see two things: 

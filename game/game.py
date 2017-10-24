@@ -306,7 +306,6 @@ def execute_command(command):
 
     if 0 == len(command):
         return
-
     if command[0] == "go":
         if len(command) > 1:
             execute_go(command[1])
