@@ -7,10 +7,7 @@ class npc():
 		self.hp = hp
 		self.lines = lines
 
-	def greet():
-		return 'Hello'
-	def sell():
-		return 'Buy'
+
 
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0,['Hello','Buy'])
