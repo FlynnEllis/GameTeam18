@@ -32,7 +32,7 @@ class shop_npc(npc):
 class chuckle_npc(npc):
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
-<<<<<<< HEAD
+
 	def talk(self,player):
 		output('To me, to you')
 		anykey()
