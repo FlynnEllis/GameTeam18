@@ -55,13 +55,7 @@ room_student_union =  room(
     "student union",
     { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
     [],
-<<<<<<< HEAD
-
     {'jill':npc_jill},
-
-=======
-    {'jill':npc_jill},
->>>>>>> a36ab898f6d3de80fe6165a42bdd812f86e61de6
     """You have arrived at the Student Union. 
     After queueing for what seemed 3 decades you have arrived at the main dance floor. 
     It appears that a foam party is happening on this particular night. 
