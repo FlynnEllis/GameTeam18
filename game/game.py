@@ -323,6 +323,10 @@ This wasn't your wisest choice.''')
 		anykey()
 		return True
 
+	elif player.current_room == room_win_home:
+		print('''You may have a headache in the morning but you made it home safely after a nice stomachfull of food,
+			Congratulations you met a win condition!''')
+
 
 	#elif: #lose fight
 	#elif: #drown
