@@ -116,7 +116,7 @@ def execute_fight(npc,item,player):
 		anykey()
 		return player
 	if victim == npc_kirill:
-		output('You realise your mistake as soon as you make it. Kirill gracefully dodges your swing, dancing behind you. "Nothing personal kid" he whispers as he chokes you unconscious.')
+		output('You realise your mistake as soon as you make it. Kirill gracefully dodges your swing, dancing behind you. "Nothing personal kid" he whispers as he chokes you unconscious.', player.sobriety)
 		player.hp = 0
 		anykey()
 
