@@ -39,16 +39,9 @@ room_your_room = room(
     {"back":'pre pre drinks', "bed":'your bed'},
     [wallet, your_id, keys],
     {},
-<<<<<<< HEAD
     """You sit on your bed contemplating your outfit for the night, the walls are 
 shaking from the predrinks occuring next door. It is time to grace them with 
 your presence.""")
-=======
-    """You sit on your bed contemplating your outfit for the night, \nthe walls are shaking from the predrinks occuring next door. 
-It is time to grace them with your presence.
-
-    """)
->>>>>>> d1a4f0056888e7faa974ec2e332b9346a8ea82a1
 
 room_bed = room(
     "your bed",
