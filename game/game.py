@@ -67,19 +67,19 @@ def print_exit(direction, leads_to):
 	print("GO " + direction.upper() + " to " + leads_to + ".")
 
 
-def print_menu(exits, room_items, inv_items, room_npcs):
+def print_menu(player):
 
 	print("You can:")
 	# Iterate over available exits
-	for direction in exits:
+	for direction in player.current_room.exits:
 		# Print the exit name and where it leads to
-		print_exit(direction, exit_leads_to(exits, direction))
-	for item in room_items:
+		print_exit(direction, exit_leads_to(player.current_room.exits, direction))
+	for item in player.current_room.items:
 		print("TAKE " + item.id.upper() + " to take " + item.name)
-	for item in inv_items:
+	for item in player.inventory:
 		print("DROP " + item.id.upper() + " to drop your " + item.name)
-	for npc in room_npcs:
-		print("FIGHT " + room_npcs[npc].name.upper() + " to fight " + room_npcs[npc].name.upper())
+	for npc in player.current_room.npcs:
+		print("FIGHT " + player.current_room.npcs[npc].name.upper() + " to fight " + player.current_room.npcs[npc].name.upper())
 	
 	print("What do you want to do?")
 
@@ -132,9 +132,9 @@ def execute_fight(npc,item,player):
 		return player
 	your_weapon = get_item_from_inventory(item,player)
 	if (your_weapon == None):
-		return
+		pass
 	elif (victim.hp // your_weapon.mass) + 1 < (player.hp // victim.inventory[0].mass) + 1:
-		print('You have knocked out ' + npc + '.' +  list_of_items(victim.inventory) + ' spills to the floor. Emptying their pockets reveals £'+str(victim.money) )
+		print('You have knocked out ' + npc + '. The following items: ' +  list_of_items(victim.inventory) + ' spill to the floor. Emptying their pockets reveals £'+str(round(victim.money,2)) )
 		player.money += victim.money
 		player.current_room.items +=  player.current_room.npcs.pop(npc).inventory
 		
@@ -153,7 +153,7 @@ def execute_fight(npc,item,player):
 def execute_talk(npc,player):
 
 	try:
-		player.inventory =  player.current_room.npcs[npc].talk(player.inventory)
+		player =  player.current_room.npcs[npc].talk(player)
 	except KeyError:
 		print(npc[0].upper() + npc[1:] + ' is not in the room')
 		anykey()
@@ -207,7 +207,7 @@ def execute_command(command,player):
 			anykey()
 		elif len(command) == 2:
 
-			print('Fight '+ command[1] +'with what?')
+			print('Fight '+ command[1] +' with what?')
 			anykey()
 		else:
 			player = execute_fight(command[1],command[2],player)
@@ -242,9 +242,9 @@ def execute_command(command,player):
 		anykey()
 	return player
 
-def menu(exits, player):
+def menu(player):
 
-	print_menu(exits, player.current_room.items, player.inventory,player.current_room.npcs)
+	print_menu(player)
 
 
 	user_input = input("> ")
@@ -276,10 +276,11 @@ def main():
 		system('cls')
 		print_room(player.current_room)
 		print("You're carrying", inventory_mass(player.inventory), "kg.") 
+		print('You have £'+ str(player.money))
 		print_inventory_items(player.inventory)
 
 		# Show the menu with possible actions and ask the player
-		command = menu(player.current_room.exits,player)
+		command = menu(player)
 
 		# Execute the player's command
 		player = execute_command(command,player)

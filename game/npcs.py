@@ -12,10 +12,15 @@ class npc():
 class shop_npc():
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
-	def talk(self,inventory):
-
-		inventory.append(self.inventory.pop(navigate_chat_options([item.name + '     £' + str(item.price) for item in self.inventory],0)))
-		return inventory
+	def talk(self,player):
+		item_index = navigate_chat_options([item.name + '     £' + str(item.price) for item in self.inventory],0)
+		if player.money >= self.inventory[item_index].price:
+			player.money -= self.inventory[item_index].price
+			player.inventory.append(self.inventory[item_index])
+		else:
+			print('That is too expensive')
+			anykey()
+		return player
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0)
 npc_jill = npc('Jill', [vk], 5.0, 5.0)
