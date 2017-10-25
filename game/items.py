@@ -62,3 +62,4 @@ mcflurry = consumable('mcflurry','a mcflurry','To cool down after a busy night.'
 kebab = consumable('kebab','a kebab','Magical mystery meet.',4.2,3,-2)
 a_cheeky_wink = item('wink','a cheeky wink', 'this wink will surely be successful',0,0.1)
 irish_disco_biscuit = consumable('irish disco biscuit','an irish disco biscuit','I think I know someone who would enjoy this...',4,4,3)
+powerful_fist = item('fist','a severed fist','What do I need this for?',20,1)
