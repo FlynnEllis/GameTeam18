@@ -75,7 +75,7 @@ room_student_union_bar =  room(
 
 room_tiger_tiger =  room(
     "tiger tiger",
-    {"SU": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
+    {"su": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
     [],
     {},
     """You arrive at the ever hyped but always dissapointing Tiger Tiger. 
