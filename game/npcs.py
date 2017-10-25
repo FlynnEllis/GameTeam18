@@ -31,10 +31,10 @@ class shop_npc(npc):
 class chuckle_npc(npc):
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
-		self.lines = ['To me']
+		self.lines = ['To me','To you']
 	def talk(self,player):
 		item_index = navigate_chat_options(self.lines,0)
-		output(['To you'][item_index],player.sobriety)
+		output(['To you','To me'][item_index],player.sobriety)
 		anykey()
 		return player
 
