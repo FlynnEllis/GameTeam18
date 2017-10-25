@@ -190,7 +190,8 @@ room_pryzm_smoking_area =  room(
     [],
     {},
     """You walk into the smoking area and reach for your pockets for a cigarette, 
-it is then you remember that smoking shortens your life expectancy by ten years, you won't be smoking today.
+it is then you remember that smoking shortens your life expectancy by ten years, you won't be smoking today. Just as you turn
+to leave you hear murmurings about a welsh pub. 
 """)
 
 room_welsh_pub =  room(
