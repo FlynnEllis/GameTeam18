@@ -273,14 +273,29 @@ def win_condition(player):
 	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
 		if (keys not in player.inventory) or (phone not in player.inventory):
 			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
+			time.sleep(2)
+			return True
 		else:
 			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
+			time.sleep(2)
+			return True
 	elif player.drugged:
 		system('cls')
 		print('Whoa this is wicked!') 
 		pyshedelic()
 		return True
-	#drugs
+	elif player.hp =< 0:
+		print("You died.")
+		time.sleep(2)
+		return True
+	elif player.current_room == room_river:
+		print("""It appears whilst drunk you stumbled and fell in the river Taff, the water seeps into your clothes as your feet touch a number of foreign objects.
+Was that a shopping trolley?
+
+You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter""")
+		time.sleep(2)
+		return True
+	elif 
 	#elif: #lose fight
 	#elif: #drown
 	#elif: #takeaway
