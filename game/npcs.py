@@ -6,11 +6,11 @@ class npc():
 		self.inventory = inventory
 		self.money = money
 		self.hp = hp
-		self.lines_to = ['Hello '+ self.name,'']#need adding
-		self.lines_from =[]#need adding
+		self.lines_to = ['Greetings ','background','latest rumours','little advice','little secret','my trade','services','someone in particular','specific places']#need adding
+		self.lines_from =['Hi I\'m '+ self.name,'I\'m a student at the university','I heard the Chuckle brothers are around town somewhere','Excessive drinking is bad for your liver','I\'ve heard Kirill will do anything for an irish disco biscuit','I\'m a student','There\'s a guy selling burgers by the student union','I wouldn\'t buy anything off Dave','There\'s a game on tonight so I\'d avoid any Welsh pubs']#need adding
 	def talk(self,player):
-		item_index = navigate_chat_options(self.lines,0)
-		output(lines_from[item_index],player.sobriety)
+		item_index = navigate_chat_options(self.lines_to,0)
+		output(self.lines_from[item_index],player.sobriety)
 		anykey()
 		return player
 		
