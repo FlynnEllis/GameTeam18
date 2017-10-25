@@ -35,13 +35,7 @@ class chuckle_npc(npc):
 <<<<<<< HEAD
 	def talk(self,player):
 		output('To me, to you')
-=======
-		self.lines = ['To me','To you']
-	def talk(self,player):
-		item_index = navigate_chat_options(self.lines,0)
-		output(['To you','To me'][item_index],player.sobriety)
 		anykey()
->>>>>>> 5e848cbde74dfab6f153534a51d57b857180b1f0
 		return player
 
 class kirill_npc(npc):
