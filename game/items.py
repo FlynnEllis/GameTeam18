@@ -6,8 +6,8 @@ class item():
 		self.desc = description
 		self.mass = mass
 		self.price = price
-	def use(inventory,sobriety):
-		return inventory,sobriety
+	def use(player):
+		return player
 
 class consumable(item):
 	def __init__(self,identifier,name,description,mass,price,units):
@@ -22,7 +22,7 @@ class consumable(item):
 
 		player.sobriety -= self.units
 		player.inventory.remove(self)
-		return player,
+		return player
 
 
 beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0.1)

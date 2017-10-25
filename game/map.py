@@ -37,7 +37,7 @@ help you along the way.""")
 room_your_room = room(
     "your room",
     {"out":'pre pre drinks', "bed":'your bed'},
-    [wallet, your_id, keys],
+    [jager_bomb,wallet, your_id, keys],
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are 
 shaking from the predrinks occuring next door. It is time to grace them with 
@@ -160,7 +160,7 @@ room_pryzm_main =  room(
     "pryzm main",
     {"disco": "pryzm disco", "bar":"pryzm bar", "toilet":"pryzm toilet","exit":"pryzm"},
     [],
-    {'Barry Chuckle' : npc_Chuckle_1, 'Paul Chuckle' : npc_Chuckle_2},
+    {'barry' : npc_Chuckle_1, 'paul' : npc_Chuckle_2},
     """Welcome to the main floor where the bass is giving you heart palputations 
 and the lights elevating you to a new plane of being, 
 in the corner you spot two odd looking men with moustaches taking pictures with everyone.""")

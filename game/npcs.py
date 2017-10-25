@@ -29,6 +29,7 @@ class chuckle_npc(npc):
 		self.lines = ['To me','asdsad','asdsad','asdsad','asdsad','asdsad']
 	def talk(self,player):
 		item_index = navigate_chat_options(self.lines,0)
+		return player
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0)
 npc_jill = npc('Jill', [vk], 5.0, 5.0)

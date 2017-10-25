@@ -91,7 +91,7 @@ def execute_go(direction,player):
 		player.current_room = move(player.current_room.exits, direction)
 		output("You are in "+ player.current_room.name, player.sobriety)
 	else:
-		output("You cannot go there. "+ player.sobriety)
+		output("You cannot go there. ", player.sobriety)
 		anykey()
 	return player
 
@@ -285,11 +285,6 @@ def main():
 
 		# Execute the player's command
 
-<<<<<<< HEAD
-
-		
-=======
->>>>>>> efc5f3b8a278a18f117066b51f7677a192509da4
 		player = execute_command(command,player)
 
 
