@@ -6,10 +6,11 @@ class npc():
 		self.inventory = inventory
 		self.money = money
 		self.hp = hp
-		self.lines = ['Hello '+ self.name,'']
+		self.lines_to = ['Hello '+ self.name,'']#need adding
+		self.lines_from =[]#need adding
 	def talk(self,player):
 		item_index = navigate_chat_options(self.lines,0)
-		output(['Hello','basdsad','aasdsad','sasdsad','fasdsad','hasdsad'][item_index],player.sobriety)
+		output(lines_from[item_index],player.sobriety)
 		anykey()
 		return player
 		
@@ -25,6 +26,7 @@ class shop_npc(npc):
 			print('That is too expensive')
 			anykey()
 		return player
+#class student(npc):
 
 class chuckle_npc(npc):
 	def __init__(self,name,inventory,money,hp):
@@ -58,8 +60,8 @@ npc_Chuckle_1 = chuckle_npc('Barry Chuckle',[drugs], 0.0, 10.0)
 npc_Chuckle_2 = chuckle_npc('Paul Chuckle', [drugs], 0.0, 10.0)
 npc_gaz = npc('Gaz', [], 4.0, 6.0)
 npc_homeless = npc('Homeless man', [beer_bottle_empty], 0.0, 1.0)
-npc_mcdonalds = shop_npc("Worker", [cheeseburger, chicken_nuggets, mayo_chicken, wrap_of_the_day, chips, mcflurry], 100.0, 30.0)
-npc_burger = shop_npc("Burgerman", [cheeseburger], 20.0, 40.0)
+npc_mcdonalds = shop_npc("Worker", [cheeseburger,beefburger, chicken_nuggets, mayo_chicken, wrap_of_the_day, chips, mcflurry], 100.0, 30.0)
+npc_burger = shop_npc("Burgerman", [cheeseburger,beefburger], 20.0, 40.0)
 npc_su_bar = shop_npc('Bartender', [vk,vk,vk,vk,vk,vk,vk,vk], 100.0,5.0)
 npc_pryzm_bar= shop_npc('Bartender', [rum_coke, rum_coke, rum_coke, gin_tonic, gin_tonic, gin_tonic, sambuca_shot, sambuca_shot, whiskey_shot, whiskey_shot, tequila_shot, tequila_shot], 200.0,5.0)
 npc_tiger_tiger_bar = shop_npc('Bartender', [tequila_shot,tequila_shot, rum_coke, rum_coke, rum_coke, gin_tonic, gin_tonic, gin_tonic, sambuca_shot, sambuca_shot, whiskey_shot, whiskey_shot], 100.0,5.0)
