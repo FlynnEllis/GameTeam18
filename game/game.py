@@ -173,7 +173,9 @@ FIGHT NPC ITEM to fight an npc with an item in your inventory (try something hea
 TALK NPC to talk to an npc
 LOOK ITEM to inspect an item in your inventory
 USE ITEM to use an item in your inventory
-ID to list the ids of the items in the room and your inventory''')
+ID to list the ids of the items in the room and your inventory
+
+*(For items, type them as one word - e.g. "Use darkfruits")*''')
 	anykey()
 
 def execute_id(player):
@@ -305,7 +307,6 @@ def win_condition(player):
 
 
 	elif player.hp == 0:
-		print('You awaken in a police cell, you dread to imagine what fate awaits you')
 		anykey()
 		return True
 
