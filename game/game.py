@@ -116,9 +116,10 @@ def execute_fight(npc,item,player):
 		anykey()
 		return player
 	if victim == npc_kirill:
-		output('You realise your mistake as soon as you make it. Kirill gracefully dodges your swing, dancing behind you. "Nothing personal kid" he whispers as he chokes you unconscious.')
+		output('You realise your mistake as soon as you make it. Kirill gracefully dodges your swing, dancing behind you. "Nothing personal kid" he whispers as he chokes you unconscious.',player.sobriety)
 		player.hp = 0
 		anykey()
+		return player
 
 	your_weapon = get_item_from_inventory(item,player)
 	if (your_weapon == None):
@@ -284,10 +285,7 @@ def win_condition(player):
 		psychedelic()
 		anykey()
 		return True
-	elif player.hp <= 0:
-		print("You died.")
-		anykey()
-		return True
+
 	elif player.current_room == room_river:
 		print("You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter")
 		anykey()
@@ -297,6 +295,7 @@ def win_condition(player):
 	elif player.hp == 0:
 		print('You awaken in a police cell, you dread to imagine what fate awaits you')
 		anykey()
+		return True
 
 	#elif kirill disco biscuit:
 	#	anykey()
@@ -345,7 +344,7 @@ def main():
 
 		player = execute_command(command,player)
 	print('Game over')
-	anykey()
+	input()
 
 
 
