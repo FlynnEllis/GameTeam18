@@ -46,7 +46,7 @@ room_student_union =  room(
     "student union",
     { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
     [],
-    {'Jill' : npc_jill},
+    {'jill' : npc_jill},
     """You have arrived at the Student Union. 
     After queueing for what seemed 3 decades you have arrived at the main dance floor. 
     It appears that a foam party is happening on this particular night. 
@@ -67,7 +67,7 @@ room_student_union_bar =  room(
     "student union bar",
     {"dancefloor": "student union dancefloor", "exit":"student union"},
     [],
-    {'Bartender': npc_su_bar},
+    {'bartender': npc_su_bar},
     """After queing for at least half an hour you make it to the bar. As the pressure of the people pushing on you grows
     you manage to shout VK breathlessly at the bartender. He asks what colour and you desperately gesture at the fridge.
     Luckily VK's only only cost 1 tonight. Perfect.
@@ -75,7 +75,7 @@ room_student_union_bar =  room(
 
 room_tiger_tiger =  room(
     "tiger tiger",
-    {"SU": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
+    {"su": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
     [],
     {},
     """You arrive at the ever hyped but always dissapointing Tiger Tiger. 

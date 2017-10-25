@@ -14,18 +14,16 @@ def get_item_from_inventory(item_id):
 		print('You don\'t have ' + item_id)
 		anykey()
 		return None
+
 def list_of_items(items):
 
     return ', '.join([item.name for item in items])
 
 def inventory_mass(inventory):
-    
     inv_mass = 0
-    
     for item in inventory:
         inv_mass = inv_mass + float(item.mass)
-    inv_mass = round(inv_mass, 3)
-    print("You're carrying", inv_mass, "kg.")     
+    inv_mass = round(inv_mass, 3)    
     return inv_mass
 
 def list_of_npcs(npcs):
@@ -36,14 +34,11 @@ def print_room_npcs(room):
 		print("There is " + list_of_npcs(room.npcs) + " here.\n")
 
 def print_room_items(items):
-
     if len(items) != 0:
     	print("There is " + list_of_items(items) + " here.\n")
 
-
-
 def print_inventory_items(items):
-
+    print("You're carrying", inv_mass, "kg.") 
     if len(items) !=0:
         print("You have " + list_of_items(items) + ".\n")
 
@@ -103,7 +98,6 @@ def execute_go(direction):
         anykey()
 
 def execute_take(item_id):
-
     try:
         item_id = [item.id for item in current_room.items].index(item_id)
         if (current_room.items[item_id].mass +  inventory_mass(inventory)) > 20:
@@ -119,7 +113,6 @@ def execute_take(item_id):
     
 
 def execute_drop(item_id):
-
     try:
         current_room.items.append(inventory.pop([item.id for item in inventory].index(item_id)))
     except ValueError:
@@ -127,8 +120,6 @@ def execute_drop(item_id):
         anykey()
 
 def execute_fight(npc,item):
-    #print(item,inventory)
-	
 	try:
 		victim = current_room.npcs[npc]
 	except KeyError:
@@ -191,7 +182,8 @@ def anykey():
 			return
 
 def execute_talk(npc):
-    print(navigate_chat_options(current_room.npcs[npc].lines,0))
+    npc.talk()
+   
 
 def execute_look(item):
 	item = get_item_from_inventory(item)
@@ -203,6 +195,9 @@ def execute_look(item):
 def execute_use(item):
 	inventory,sobriety = item.use(inventory,sobriety) 
 	anykey()
+
+def execute_survey():
+    pass
 
 def execute_command(command):
 
@@ -254,12 +249,17 @@ def execute_command(command):
 		else:
 			print("Look at what?")
 			anykey()
+
 	elif command[0] == 'use':
 		if len(command) > 1:
 			execute_use(command[1])
 		else:
-			print("Use what?")
-			anykey()
+            print("Use what?")
+            anykey()
+
+    elif command[0] == 'survey':
+        execute_survey()
+
 	else:
 		print("This makes no sense.")
 		anykey()
