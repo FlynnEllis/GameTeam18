@@ -4,9 +4,9 @@ import msvcrt
 def print_chat_options(options,cursor):
     for index in range(len(options)):
         if index == cursor:
-            print('{ '+ options[index].id +' }')
+            print('{ '+ options[index] +' }')
         else:
-            print('  ' + options[index].id)
+            print('  ' + options[index])
  
 def navigate_chat_options(options,cursor):
     system('cls')
@@ -33,3 +33,12 @@ def getkey():
                 return {b'H': 'up', b'P': 'down'}[char]
             else:
             	return char
+
+
+ 
+
+def anykey():
+    print('Press any key to continue')
+    while True:
+        if msvcrt.kbhit():
+            return
