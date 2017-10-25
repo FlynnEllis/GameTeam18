@@ -36,8 +36,8 @@ room_your_room = room(
     {"back":'pre pre drinks', "bed":'your bed'},
     [wallet, your_id, keys],
     {},
-    """You sit on your bed contemplating your outfit for the night, the walls are shaking from
-    the predrinks occuring next door. It is time to grace them with your presence.
+    """You sit on your bed contemplating your outfit for the night, \nthe walls are shaking from the predrinks occuring next door. 
+It is time to grace them with your presence.
 
     """)
 
