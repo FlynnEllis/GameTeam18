@@ -124,7 +124,7 @@ room_tiger_tiger_toilet =  room(
 
 room_pryzm =  room(
     "pryzm",
-    {"SU": "student union", "tiger": "tiger tiger", "upstairs": "pryzm main"},
+    {"su": "student union", "tiger": "tiger tiger", "upstairs": "pryzm main"},
     [],
     {},
     """You arrive at Pryzm. 
