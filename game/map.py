@@ -197,7 +197,7 @@ room_welsh_pub =  room(
     "welsh pub",
     {"bar": "pub bar", "outside": "river"},
     [],
-    {'dafydd':npc_welsh_man2,'gruffydd':npc_welsh_man2},
+    {'dafydd':npc_welsh_man,'gruffydd':npc_welsh_man2},
     """You have somehow ended up in a welsh pub. The delights of Delilah fill your ears, along with the cacophony of
 a room full of balding middle aged men singing along, they all seem to be glaring at you.
 They know you dont belong here. 

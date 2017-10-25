@@ -166,7 +166,7 @@ def execute_use(item,player):
 
 def execute_help():
 	print(''' 
-GO PLACE to move
+GO DIRECTION to move
 TAKE ITEM to take an item that is in a room
 DROP ITEM to drop an item
 FIGHT NPC ITEM to fight an npc with an item in your inventory (try something heavy)
@@ -275,7 +275,7 @@ def move(exits, direction):
 
 def win_condition(player):
 	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
-		if (keys not in player.inventory) or (phone not in player.inventory):
+		if (keys not in player.inventory) and (phone not in player.inventory):
 			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
 			anykey()
 			return True
@@ -330,7 +330,7 @@ This wasn't your wisest choice.''')
 		anykey()
 		return True
 	elif irish_disco_biscuit in npc_kirill.inventory:
-		print('Your night may not have been the best, but you have at least acheived one thing, you will surely get a high mark for your game.')
+		print('You don\'nt want to give Kirill enough time to change his mind so you head home. Your night may not have been the best, but you have at least acheived one thing, you will surely get a high mark for your game.')
 		anykey()
 		return True
 
