@@ -32,11 +32,6 @@ def list_of_npcs(npcs):
 
 	return ', '.join([npcs[npc].name for npc in npcs])
 
-
-
-
-
-
 def print_room(player):
 
 	blank_line = "\n"
@@ -177,7 +172,7 @@ def execute_help():
 GO PLACE to move
 TAKE ITEM to take an item that is in a room
 DROP ITEM to drop an item in a room
-FIGHT NPC ITEM to fight an npc with an item (try something heavy)
+FIGHT NPC ITEM to fight an npc with an item in your inventory (try something heavy)
 TALK NPC to talk to an npc
 LOOK ITEM to inspect an item in your inventory
 USE ITEM to use an item in your inventory''')
@@ -273,29 +268,30 @@ def win_condition(player):
 	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
 		if (keys not in player.inventory) or (phone not in player.inventory):
 			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
-			time.sleep(2)
+			anykey()
 			return True
 		else:
 			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
-			time.sleep(2)
+			anykey()
 			return True
 	elif player.drugged:
 		system('cls')
 		print('Whoa this is wicked!') 
-		pyshedelic()
+		psychedelic()
+		anykey()
 		return True
 	elif player.hp =< 0:
 		print("You died.")
-		time.sleep(2)
+		anykey()
 		return True
 	elif player.current_room == room_river:
 		print("""It appears whilst drunk you stumbled and fell in the river Taff, the water seeps into your clothes as your feet touch a number of foreign objects.
 Was that a shopping trolley?
 
 You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter""")
-		time.sleep(2)
+		anykey()
 		return True
-	elif 
+	#elif 
 	#elif: #lose fight
 	#elif: #drown
 	#elif: #takeaway
@@ -304,28 +300,7 @@ You wake up at the bay the next morning cold and covered in bits of plastic and 
 
 
 
- #   if player.current_room == rooms["Office"]:
-  #      output("Congratualations you have won!")
-   #     return True
-	#else:
-	 #   return False
 
-
-#	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
-#		if (keys not in player.inventory) or (phone not in player.inventory):
-#			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
-#		else:
-#			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
-#	elif player.drugged:
-#		print('') 
-#		pyshedelic()
-#	#drugs
-#	'''
-#	elif: #lose fight
-#	elif: #drown
-#	elif: #takeaway
-#	'''
-#	#else: #kiril irish
 	return False
 
 
