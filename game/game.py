@@ -61,7 +61,7 @@ def print_menu(player):
 	if items != '':
 		print('You have ' + items +'. ',end = '',flush = True)
 	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
-	output('You have £'+ str(player.money)+'\n', player.sobriety)
+	output('You have £'+ str(format(player.money, '.2f'))+'\n', player.sobriety)
 		
 
 	output('Type HELP to see all available commands and their usage',player.sobriety)
