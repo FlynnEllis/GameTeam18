@@ -33,7 +33,7 @@ room_pre_pre_drinks = room(
     
 room_your_room = room(
     "your room",
-    {"back":'pre pre drinks', "bed":'bed'},
+    {"back":'pre pre drinks', "bed":'your bed'},
     [wallet, your_id, keys],
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are shaking from
@@ -41,8 +41,8 @@ room_your_room = room(
 
     """)
 
-room_bed = (
-    "bed",
+room_bed = room(
+    "your bed",
     {},
     [],
     {},
@@ -295,6 +295,7 @@ room_ending =room(
 
 rooms = {
 "your room": room_your_room,
+"your bed": room_bed,
 'pre pre drinks': room_pre_pre_drinks,
 "pre drinks": room_pre_drinks,
 "student union": room_student_union,
