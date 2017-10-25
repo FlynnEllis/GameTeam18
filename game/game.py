@@ -58,18 +58,7 @@ def exit_leads_to(exits, direction):
 
 def print_menu(player):
 
-	output("You can:",player.sobriety)
-	# Iterate over available exits
-	for direction in player.current_room.exits:
-		# Print the exit name and where it leads to
-	
-		output("GO " + direction.upper() + " to " + exit_leads_to(player.current_room.exits, direction) + ".", player.sobriety)
-	for item in player.current_room.items:
-		output("TAKE " + item.id.upper() + " to take " + item.name, player.sobriety)
-	for item in player.inventory:
-		output("DROP " + item.id.upper() + " to drop your " + item.name, player.sobriety)
-	for npc in player.current_room.npcs:
-		output("FIGHT " + player.current_room.npcs[npc].name.upper() + " to fight " + player.current_room.npcs[npc].name.upper(), player.sobriety)
+	output('Type HELP to see all available commands and their usage',player.sobriety)
 	
 	output("What do you want to do?",player.sobriety)
 
@@ -84,7 +73,7 @@ def execute_go(direction,player):
 
 	if is_valid_exit(player.current_room.exits, direction):
 		player.current_room = move(player.current_room.exits, direction)
-		output("You are in "+ player.current_room.name, player.sobriety)
+
 	else:
 		output("You cannot go there. ", player.sobriety)
 		anykey()
@@ -120,6 +109,11 @@ def execute_fight(npc,item,player):
 		output(npc[0].upper() + npc[1:] + ' is not in the room', player.sobriety)
 		anykey()
 		return player
+	if victim == npc_kirill:
+		output('You realise your mistake as soon as you make it. Kirill gracefully dodges your swing, dancing behind you. "Nothing personal kid" he whispers as he chokes you unconscious.')
+		player.hp = 0
+		anykey()
+
 	your_weapon = get_item_from_inventory(item,player)
 	if (your_weapon == None):
 		pass
@@ -130,14 +124,9 @@ def execute_fight(npc,item,player):
 		
 		anykey()
 	else:
-		pass
+		output('The last thing you see is '+npc+' wielding '+victim.inventory[0]+' before you are knocked unconscious',player.sobriety)
+		player.hp = 0
 	return player
-
-	
-
-	#return npc
-
-
 
 
 def execute_talk(npc,player):
@@ -171,11 +160,12 @@ def execute_help():
 	print(''' 
 GO PLACE to move
 TAKE ITEM to take an item that is in a room
-DROP ITEM to drop an item in a room
+DROP ITEM to drop an item
 FIGHT NPC ITEM to fight an npc with an item in your inventory (try something heavy)
 TALK NPC to talk to an npc
 LOOK ITEM to inspect an item in your inventory
 USE ITEM to use an item in your inventory''')
+	anykey()
 
 def execute_command(command,player):
 
@@ -247,8 +237,15 @@ def execute_command(command,player):
 
 def menu(player):
 	print_room(player)
-	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.", player.sobriety) 
-	output('You have £'+ str(player.money), player.sobriety)
+
+
+	output("There are exits leading to " + ', '.join([exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
+
+	items = list_of_items(player.inventory)
+	if items != '':
+		print('You have ' + items +'. ',end = '',flush = True)
+	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
+	output('You have £'+ str(player.money)+'\n', player.sobriety)
 		
 	print_menu(player)
 
@@ -276,6 +273,15 @@ def win_condition(player):
 		system('cls')
 		print('Whoa this is wicked!') 
 		psychedelic()
+		return True
+	elif player.hp == 0:
+		print('You awaken in a police cell, you dread to imagine what fate awaits you')
+		anykey()
+	elif player.current_room == room_bed:
+		print('''You are now known amongst your friends as the flaker, passive aggressive 
+messages spam your messenger all night. 'enjoying netflix?!?!?!??!'
+This wasn't your wisest choice.''')
+		anykey()
 		return True
 	#drugs
 	#elif: #lose fight
@@ -307,6 +313,8 @@ def main():
 		# Execute the player's command
 
 		player = execute_command(command,player)
+	print('Game over')
+	anykey()
 
 
 
@@ -314,5 +322,6 @@ def main():
 # '__main__' is the name of the scope in which top-level code executes.
 # See https://docs.python.org/3.4/library/__main__.html for explanation
 if __name__ == "__main__":
+	system('mode con: cols=100 lines=40')
 	main()
 

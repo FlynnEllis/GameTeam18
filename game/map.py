@@ -56,7 +56,7 @@ room_student_union =  room(
     "student union",
     { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
     [],
-    {'jill':npc_jill},
+    {'bouncer':npc_bouncer,'jill':npc_jill},
     """You have arrived at the Student Union. 
 After queueing for what seemed 3 decades you have arrived at the main 
 dance floor. It appears that a foam party is happening on this particular night. 
@@ -88,7 +88,7 @@ room_tiger_tiger =  room(
     "tiger tiger",
     {"su": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
     [],
-    {},
+    {'bouncer':npc_bouncer},
     """You arrive at the ever hyped but always dissapointing Tiger Tiger. 
 The queue is as short as your life expectancy so you enter straight away. 
 The atmosphere seems to have a sort of life to it although
@@ -101,7 +101,7 @@ room_tiger_tiger_main =  room(
     [],
     {},
     """You are in the main room of tiger tiger!
-Much to your surprise the normally barren and empty dancefloor
+Much to your surprise the normally barren and empty dance floor
 is full of people, however floors are a bit sticky so dancing will require
 a bit more effort than you would like.
 
@@ -138,7 +138,7 @@ room_pryzm =  room(
     "pryzm",
     {"su": "student union", "tiger": "tiger tiger", "upstairs": "pryzm main"},
     [],
-    {},
+    {'bouncer':npc_bouncer},
     """You arrive at Pryzm. 
 The queue was so long you started to question your life decisions. 
 As you finally get into the club, you see two things: 
@@ -178,7 +178,7 @@ room_pryzm_toilet=  room(
     "pryzm toilet",
     {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm"},
     [],
-    {},
+    {'dan':npc_dealer},
     """The smell of piss and other delights greets you as you walk into the toilets. 
 They are packed as usual and you have to wait for your time to shine.
     """)

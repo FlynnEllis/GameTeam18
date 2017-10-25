@@ -38,13 +38,13 @@ def getkey():
  
 
 def anykey():
-    print('Press any key to continue')
+    print('\nPress any key to continue')
     while True:
         if msvcrt.kbhit():
             return
 
 def psychedelic():
-    for i in range(0,15):
+    for i in range(0,8):
 
         colours_list = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
         for i in colours_list: 
