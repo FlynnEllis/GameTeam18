@@ -314,6 +314,7 @@ def win_condition(player):
 	#	return True
 	elif (cheeseburger or chucken_nuggets or mayo_chicken or wrap_of_the_day or chips or bigmac or mcflurry or kebab) in player.inventory:
 		print("You purchased some food and stumbled home while eating it, a rather successful night.")
+		return True
 
 	elif player.current_room == room_bed:
 		print('''You are now known amongst your friends as the flaker, passive aggressive 
@@ -361,6 +362,7 @@ def main():
 		player = execute_command(command,player)
 	print('Game over')
 	input()
+	print()
 
 
 
