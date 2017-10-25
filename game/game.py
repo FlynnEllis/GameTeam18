@@ -247,7 +247,7 @@ def menu(player):
 	print_room(player)
 
 
-	output("There are exits leading to " + ', '.join([exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
+	output("You can go " + ', '.join([direction + ' to '+exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
 
 	items = list_of_items(player.inventory)
 	if items != '':
