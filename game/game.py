@@ -7,6 +7,7 @@ from items import *
 from gameparser import *
 from helperfunctions import *
 
+
 def get_item_from_inventory(item_id,player):
 	try:
 		return player.inventory[[item.id for item in player.inventory].index(item_id)]
@@ -256,11 +257,15 @@ def move(exits, direction):
 
 def win_condition():
 	return False
+
+
+
  #   if player.current_room == rooms["Office"]:
   #      output("Congratualations you have won!")
    #     return True
 	#else:
 	 #   return False
+
 
 
 # This is the entry point of our program
@@ -279,6 +284,9 @@ def main():
 		command = menu(player)
 
 		# Execute the player's command
+
+		execute_command(command)
+		
 		player = execute_command(command,player)
 
 
