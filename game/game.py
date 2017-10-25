@@ -240,7 +240,10 @@ def execute_command(command,player):
 	return player
 
 def menu(player):
-
+	print_room(player)
+	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.", player.sobriety) 
+	output('You have £'+ str(player.money), player.sobriety)
+		
 	print_menu(player)
 
 
@@ -289,10 +292,7 @@ def main():
 	while not win_condition(player):
 		# Display game status (room description, inventory etc.)
 		system('cls')
-		print_room(player)
-		output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.", player.sobriety) 
-		output('You have £'+ str(player.money), player.sobriety)
-		
+
 
 		# Show the menu with possible actions and ask the player
 		command = menu(player)
