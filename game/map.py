@@ -55,7 +55,7 @@ room_student_union =  room(
     "student union",
     { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
     [],
-    {'Jill' : npc_jill},
+    {'jill':npc_jill},
     """You have arrived at the Student Union. 
     After queueing for what seemed 3 decades you have arrived at the main dance floor. 
     It appears that a foam party is happening on this particular night. 
