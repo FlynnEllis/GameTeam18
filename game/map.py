@@ -33,14 +33,23 @@ room_pre_pre_drinks = room(
     
 room_your_room = room(
     "your room",
-    {"back":'pre pre drinks'},
+    {"back":'pre pre drinks', "bed":'bed'},
     [wallet, your_id, keys],
     {},
-    """You return to your room, sad and alone.
-    You crash onto your bed ands start crying.
-    WHY WOULD YOU GO HOME! 
-    WHO DOES THAT!
-    Game Over, you never go home after pre drinks!""")
+    """You sit on your bed contemplating your outfit for the night, the walls are shaking from
+    the predrinks occuring next door. It is time to grace them with your presence.
+
+    """)
+
+room_bed = (
+    "bed",
+    {},
+    [],
+    {},
+    """You are now known amongst your friends as the flaker, passive aggressive messages spam your messenger all night. 'enjoying netflix?!?!?!??!'
+    This wasn't your wisest choice.
+
+    """)
 
 room_student_union =  room(
     "student union",
