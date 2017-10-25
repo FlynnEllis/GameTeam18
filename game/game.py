@@ -6,6 +6,7 @@ from player import *
 from items import *
 from gameparser import *
 from helperfunctions import *
+import winsound
 
 def get_item_from_inventory(item_id):
 	try:
@@ -256,11 +257,7 @@ def move(exits, direction):
 
 def win_condition():
 	return False
- #   if current_room == rooms["Office"]:
-  #      print("Congratualations you have won!")
-   #     return True
-	#else:
-	 #   return False
+
 
 
 # This is the entry point of our program
@@ -278,7 +275,7 @@ def main():
 
 		# Execute the player's command
 		execute_command(command)
-
+		
 
 
 # Are we being run as a script? If so, run main().
