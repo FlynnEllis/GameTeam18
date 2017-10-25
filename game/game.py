@@ -12,7 +12,7 @@ def get_item_from_inventory(item_id,player):
 		return player.inventory[[item.id for item in player.inventory].index(item_id)]
 
 	except ValueError:
-		print('You don\'t have ' + item_id)
+		output('You don\'t have ' + item_id, player.sobriety)
 		anykey()
 		return None
 
@@ -31,30 +31,24 @@ def list_of_npcs(npcs):
 
 	return ', '.join([npcs[npc].name for npc in npcs])
 
-def print_room_npcs(room):
-	if len(room.npcs) != 0:
-		print("There is " + list_of_npcs(room.npcs) + " here.\n")
-
-def print_room_items(items):
-	if len(items) != 0:
-		print("There is " + list_of_items(items) + " here.\n")
-
-def print_inventory_items(items):
-
-	if len(items) !=0:
-		print("You have " + list_of_items(items) + ".\n")
 
 
-def print_room(room):
+
+
+
+def print_room(player):
 
 	blank_line = "\n"
-	print(blank_line + room.name.upper() + blank_line)
+	output(blank_line + player.current_room.name.upper() + blank_line, player.sobriety)
 	# Display room description
-	print(room.description + blank_line)
+	output(player.current_room.description + blank_line, player.sobriety)
 	# Display items in room
-	print_room_items(room.items)
-	print_room_npcs(room)
+	
+	if len(player.current_room.items) != 0:
+		output("There is " + list_of_items(player.current_room.items) + " here.\n", player.sobriety)
 
+	if len(player.current_room.npcs) != 0:
+		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n")
 
 
 def exit_leads_to(exits, direction):
@@ -62,26 +56,26 @@ def exit_leads_to(exits, direction):
 	return rooms[exits[direction]].name
 
 
-def print_exit(direction, leads_to):
 
-	print("GO " + direction.upper() + " to " + leads_to + ".")
+	
 
 
 def print_menu(player):
 
-	print("You can:")
+	output("You can:",player.sobriety)
 	# Iterate over available exits
 	for direction in player.current_room.exits:
 		# Print the exit name and where it leads to
-		print_exit(direction, exit_leads_to(player.current_room.exits, direction))
-	for item in player.current_room.items:
-		print("TAKE " + item.id.upper() + " to take " + item.name)
-	for item in player.inventory:
-		print("DROP " + item.id.upper() + " to drop your " + item.name)
-	for npc in player.current_room.npcs:
-		print("FIGHT " + player.current_room.npcs[npc].name.upper() + " to fight " + player.current_room.npcs[npc].name.upper())
 	
-	print("What do you want to do?")
+		output("GO " + direction.upper() + " to " + exit_leads_to(player.current_room.exits, direction) + ".", player.sobriety)
+	for item in player.current_room.items:
+		output("TAKE " + item.id.upper() + " to take " + item.name, player.sobriety)
+	for item in player.inventory:
+		output("DROP " + item.id.upper() + " to drop your " + item.name, player.sobriety)
+	for npc in player.current_room.npcs:
+		output("FIGHT " + player.current_room.npcs[npc].name.upper() + " to fight " + player.current_room.npcs[npc].name.upper(), player.sobriety)
+	
+	output("What do you want to do?",player.sobriety)
 
 
 def is_valid_exit(exits, chosen_exit):
@@ -94,9 +88,9 @@ def execute_go(direction,player):
 
 	if is_valid_exit(player.current_room.exits, direction):
 		player.current_room = move(player.current_room.exits, direction)
-		print("You are in", player.current_room.name)
+		output("You are in", player.current_room.name, player.sobriety)
 	else:
-		print("You cannot go there.")
+		output("You cannot go there.", player.sobriety)
 		anykey()
 	return player
 
@@ -104,13 +98,13 @@ def execute_take(item_id,player):
 	try:
 		item_id = [item.id for item in player.current_room.items].index(item_id)
 		if (player.current_room.items[item_id].mass +  inventory_mass(player.inventory)) > 20:
-			print(("Inventory full!").upper())
+			output(("Inventory full!").upper(), player.sobriety)
 			anykey()
 		else:
 			player.inventory.append(player.current_room.items.pop(item_id))
 
 	except ValueError:
-		print('You cannot take that')
+		output('You cannot take that', player.sobriety)
 		anykey()
 	return player
 	
@@ -119,7 +113,7 @@ def execute_drop(item_id,player):
 	try:
 		player.current_room.items.append(player.inventory.pop([item.id for item in player.inventory].index(item_id)))
 	except ValueError:
-		print('You cannot drop that')
+		output('You cannot drop that', player.sobriety)
 		anykey()
 	return player
 
@@ -127,14 +121,14 @@ def execute_fight(npc,item,player):
 	try:
 		victim = player.current_room.npcs[npc]
 	except KeyError:
-		print(npc[0].upper() + npc[1:] + ' is not in the room')
+		output(npc[0].upper() + npc[1:] + ' is not in the room', player.sobriety)
 		anykey()
 		return player
 	your_weapon = get_item_from_inventory(item,player)
 	if (your_weapon == None):
 		pass
 	elif (victim.hp // your_weapon.mass) + 1 < (player.hp // victim.inventory[0].mass) + 1:
-		print('You have knocked out ' + npc + '. The following items: ' +  list_of_items(victim.inventory) + ' spill to the floor. Emptying their pockets reveals £'+str(round(victim.money,2)) )
+		output('You have knocked out ' + npc + '. The following items: ' +  list_of_items(victim.inventory) + ' spill to the floor. Emptying their pockets reveals £'+str(round(victim.money,2)) , player.sobriety)
 		player.money += victim.money
 		player.current_room.items +=  player.current_room.npcs.pop(npc).inventory
 		
@@ -155,7 +149,7 @@ def execute_talk(npc,player):
 	try:
 		player =  player.current_room.npcs[npc].talk(player)
 	except KeyError:
-		print(npc[0].upper() + npc[1:] + ' is not in the room')
+		output(npc[0].upper() + npc[1:] + ' is not in the room', player.sobriety)
 		anykey()
 	return player
    
@@ -163,14 +157,16 @@ def execute_talk(npc,player):
 def execute_look(item,player):
 	item = get_item_from_inventory(item,player)
 	if item != None:
-		print(item.name)
-		print(item.desc)
+		output(item.name, player.sobriety)
+		output(item.desc, player.sobriety)
 		anykey()
 	return player
 
 def execute_use(item,player):
-	player.inventory,player.sobriety = item.use(player.inventory,player.sobriety) 
-	anykey()
+	item_to_use = get_item_from_inventory(item,player)
+	if item_to_use != None:
+		player = item_to_use.use(player) 
+		anykey()
 	return player
 
 def execute_survey():
@@ -184,30 +180,30 @@ def execute_command(command,player):
 		if len(command) > 1:
 			player = execute_go(command[1],player)
 		else:
-			print("Go where?")
+			output("Go where?", player.sobriety)
 			anykey()
 
 	elif command[0] == "take":
 		if len(command) > 1:
 			player = execute_take(command[1],player)
 		else:
-			print("Take what?")
+			output("Take what?", player.sobriety)
 			anykey()
 
 	elif command[0] == "drop":
 		if len(command) > 1:
 			player = execute_drop(command[1],player)
 		else:
-			print("Drop what?")
+			output("Drop what?", player.sobriety)
 			anykey()
 
 	elif command[0] == "fight":
 		if len(command) ==1:
-			print('Fight who?')
+			output('Fight who?', player.sobriety)
 			anykey()
 		elif len(command) == 2:
 
-			print('Fight '+ command[1] +' with what?')
+			output('Fight '+ command[1] +' with what?', player.sobriety)
 			anykey()
 		else:
 			player = execute_fight(command[1],command[2],player)
@@ -217,28 +213,28 @@ def execute_command(command,player):
 		if len(command) > 1:
 			player = execute_talk(command[1],player)
 		else:
-			print("Talk to who?")
+			output("Talk to who?", player.sobriety)
 			anykey()
 
 	elif command[0] == 'look':
 		if len(command) > 1:
 			player = execute_look(command[1],player)
 		else:
-			print("Look at what?")
+			output("Look at what?", player.sobriety)
 			anykey()
 
 	elif command[0] == 'use':
 		if len(command) > 1:
 			player = execute_use(command[1],player)
 		else:
-			print("Use what?")
+			output("Use what?", player.sobriety)
 			anykey()
 
 	elif command[0] == 'survey':
 		execute_survey()
 
 	else:
-		print("This makes no sense.")
+		output("This makes no sense.", player.sobriety)
 		anykey()
 	return player
 
@@ -261,7 +257,7 @@ def move(exits, direction):
 def win_condition():
 	return False
  #   if player.current_room == rooms["Office"]:
-  #      print("Congratualations you have won!")
+  #      output("Congratualations you have won!")
    #     return True
 	#else:
 	 #   return False
@@ -274,10 +270,10 @@ def main():
 	while not win_condition():
 		# Display game status (room description, inventory etc.)
 		system('cls')
-		print_room(player.current_room)
-		print("You're carrying", inventory_mass(player.inventory), "kg.") 
-		print('You have £'+ str(player.money))
-		print_inventory_items(player.inventory)
+		print_room(player)
+		output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.", player.sobriety) 
+		output('You have £'+ str(player.money), player.sobriety)
+		
 
 		# Show the menu with possible actions and ask the player
 		command = menu(player)

@@ -4,7 +4,7 @@ class player_obj():
 	def __init__(self):
 		self.inventory = [beer_bottle_empty]
 		self.hp = 20
-		self.sobriety = 10
+		self.sobriety = 0
 		self.current_room = rooms["your room"]
 		self.money = 30
 

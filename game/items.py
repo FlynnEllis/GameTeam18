@@ -12,31 +12,31 @@ class consumable(item):
 	def __init__(self,identifier,name,description,mass,price,units):
 		self.units = units
 		item.__init__(self,identifier,name,description,mass,price)
-	def use(self,inventory,sobriety):
-		print('You consume the '+self.id)
+	def use(self,player):
+		output('You consume the '+self.id, player.sobriety)
 		if self.units > 0:
-			print('You feel slightly more drunk')
+			output('You feel slightly more drunk', player.sobriety)
 		elif self.units < 0:
-			print('You feel slightly sobered up')
+			output('You feel slightly sobered up', player.sobriety)
 
-		sobriety -= self.units
-		inventory.remove(self)
-		return inventory,sobriety
+		player.sobriety -= self.units
+		player.inventory.remove(self)
+		return player,
 
 
-beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0)
-glass_empty = item('glass','an empty glass','A relic of times gone by.',4.2,0)
-vodka_bottle_empty = item('vodka bottle', 'an empty vodka bottle', 'description', 6,0)
-beer_bottle_empty = item('bottle', 'an empty beer bottle','description',6,0)
-glass_empty = item('glass','an empty glass','description',4.2,0)
-keys = item('keys','keys','the keys to your flat',0,0)
-wallet = item('wallet','your wallet','',0,0)
-phone = item('phone','phone','Your gateway to a Dragon taxi home.',0,0)
-your_id = item('id','your id','Don\'t lose this.',0,0)
-drugs = consumable('drugs','drugs','some suspicious white powder',4.2,0,0)
+beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0.1)
+glass_empty = item('glass','an empty glass','A relic of times gone by.',4.2,0.1)
+vodka_bottle_empty = item('vodka bottle', 'an empty vodka bottle', 'description', 6,0.1)
+beer_bottle_empty = item('bottle', 'an empty beer bottle','description',6,0.1)
+glass_empty = item('glass','an empty glass','description',4.2,0.1)
+keys = item('keys','keys','the keys to your flat',0,0.1)
+wallet = item('wallet','your wallet','',0,0.1)
+phone = item('phone','phone','Your gateway to a Dragon taxi home.',0,0.1)
+your_id = item('id','your id','Don\'t lose this.',0,0.1)
+drugs = consumable('drugs','drugs','some suspicious white powder',4.2,0,0.1)
 hipflask = consumable('hipflask','hipflask','A cheapskates pride and joy.',4.2,0,5)
 jacket = item('jacket','your jacket','Keeps you warm, too warm.',4.2,0)
-vk = consumable('vodka','a bottle of vk','The sweet nectar of the gods.',4.2,1,1)
+vk = consumable('vk','a bottle of vk','The sweet nectar of the gods.',4.2,1,1)
 rum_coke = consumable('rum coke','rum and coke','Suboptimal drink.',4.2,3,2)
 gin_tonic = consumable('gin tonic','gin and tonic','Mature student?',4.2,3,2)
 vodka_shot = consumable('vodka shot','shot of vodka','Bread and butter of a night out.',4.2,2,2)
@@ -57,7 +57,7 @@ mayo_chicken = consumable('mayo chicken','mayo chicken','Chicken slathered in ma
 wrap_of_the_day = consumable('wrap','wrap of the day','More like wrap of the night :DDDDDDDDDDDDDDDDDDDDD',4.2,2,-1)
 chips = consumable('chips','chips','Greasier than a car engine.',4.2,2,-2)
 bigmac = consumable('bigmac','bigmac','The top dog.',4.2,3,-2)
-mcflurry = consumable('mcflurry','mcflurry','To cool down after a busy night.',4.2,1,0)
+mcflurry = consumable('mcflurry','mcflurry','To cool down after a busy night.',4.2,1,0.1)
 kebab = consumable('kebab','kebab','Magical mystery meet.',4.2,3,-2)
-a_cheeky_wink = item('wink','a cheeky wink', 'this wink will sure be successful',0,0)
+a_cheeky_wink = item('wink','a cheeky wink', 'this wink will sure be successful',0,0.1)
 irish_disco_biscuit = consumable('irish disco biscuit','irish disco biscuit','I think I know someone who would enjoy this...',4,4,3)

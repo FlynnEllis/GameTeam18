@@ -1,5 +1,5 @@
 from os import system 
-import msvcrt
+import msvcrt, random
 
 def print_chat_options(options,cursor):
     for index in range(len(options)):
@@ -42,3 +42,29 @@ def anykey():
     while True:
         if msvcrt.kbhit():
             return
+
+
+
+
+def shuffle_string(string):
+    chars = list(string)
+    random.shuffle(chars)
+    return ''.join(chars)
+
+def garble_word(word):
+    # No operation needed on sufficiently small words
+    # (Also, main algorithm requires word length >= 2)
+    if len(word) <= 3:
+        return word
+
+    # Split word into first & last letter, and middle letters
+    first, mid, last = word[0], word[1:-1], word[-1]
+
+    return first + shuffle_string(mid) + last
+
+def output(sentence,sobriety):
+    if sobriety <= 0:
+        words = sentence.split(' ')
+        print (' '.join(map(garble_word, words)))
+    else:
+        print(sentence)
