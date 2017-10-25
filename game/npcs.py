@@ -43,7 +43,7 @@ class kirill_npc(npc):
 	def talk(self,player):
 		output('As you begin to apporach Kirill, you realise you need to hand in your game tomorrow and it is nowhere near finished! You wonder if Kirill takes bribes...',player.sobriety)
 		if irish_disco_biscuit in player.inventory:
-			output('Kirill would you care for an irish disco buicuit?',player.sobriety)
+			output('Kirill would you care for an irish disco biscuit?',player.sobriety)
 			anykey()
 			output('Kirill accepts the drink gratefully. He seems please, perhaps this will help your mark.',player.sobriety)
 		line_index = navigate_chat_options(self.lines + 0)
