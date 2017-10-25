@@ -97,7 +97,7 @@ occurrence or leave for yet another cesspool. """)
 
 room_tiger_tiger_main =  room(
     "tiger tiger main",
-    {"downstairs": "tiger tiger", "bar": "tiger tiger bar", "tiger2":"tiger tiger second"},
+    {"downstairs": "tiger tiger", "bar": "tiger tiger bar", "dance":"tiger tiger second"},
     [],
     {},
     """You are in the main room of tiger tiger!
@@ -109,7 +109,7 @@ a bit more effort than you would like.
 
 room_tiger_tiger_bar =  room(
     "tiger tiger bar",
-    {"exit":"tiger tiger", "south": "tiger tiger main", "tiger2":"tiger tiger second"},
+    {"exit":"tiger tiger", "south": "tiger tiger main", "dance":"tiger tiger second"},
     [],
     {'bartender': npc_tiger_tiger_bar},
     """It appears you can buy numerous alcoholic beverages here. Perhaps
@@ -125,7 +125,7 @@ its kinda like the other one but the floors arent as sticky this time. You spot 
 
 room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
-    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "pub":"welsh pub"},
+    {"dance": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "pub":"welsh pub"},
     [],
     {'dan':npc_dealer},
     """You contemplate why club toilets are designed so badly, you soon realise
