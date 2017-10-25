@@ -6,10 +6,11 @@ class npc():
 		self.inventory = inventory
 		self.money = money
 		self.hp = hp
-		self.lines = ['Hello '+ self.name,'']
+		self.lines_to = ['Hello '+ self.name,'']#need adding
+		self.lines_from =[]#need adding
 	def talk(self,player):
 		item_index = navigate_chat_options(self.lines,0)
-		output(['Hello','basdsad','aasdsad','sasdsad','fasdsad','hasdsad'][item_index],player.sobriety)
+		output(lines_from[item_index],player.sobriety)
 		anykey()
 		return player
 		
@@ -25,6 +26,7 @@ class shop_npc(npc):
 			print('That is too expensive')
 			anykey()
 		return player
+#class student(npc):
 
 class chuckle_npc(npc):
 	def __init__(self,name,inventory,money,hp):

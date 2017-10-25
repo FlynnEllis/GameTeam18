@@ -127,7 +127,7 @@ room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
     {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "welsh pub":"welsh pub"},
     [],
-    {},
+    {'dan':npc_dealer},
     """You contemplate why club toilets are designed so badly, you soon realise
 that like IKEA the layout is designed to send you past 'Freshen up guy'. 
 After refusing a selection of gum and manly scents 
@@ -162,7 +162,7 @@ room_pryzm_main =  room(
     [],
     {'barry' : npc_Chuckle_1, 'paul' : npc_Chuckle_2},
     """Welcome to the main floor where the bass is giving you heart palputations 
-and the lights elevating you to a new plane of being, 
+and the lights are elevating you to a new plane of being, 
 in the corner you spot two odd looking men with moustaches taking pictures with everyone.""")
 
 room_pryzm_disco =  room(
@@ -178,7 +178,7 @@ room_pryzm_toilet=  room(
     "pryzm toilet",
     {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm"},
     [],
-    {'dan':npc_dealer},
+    {},
     """The smell of piss and other delights greets you as you walk into the toilets. 
 They are packed as usual and you have to wait for your time to shine.
     """)
@@ -206,7 +206,7 @@ You know you dont belong here.
 
 room_pub_bar =  room(
     "pub bar",
-    {"south": "welsh pub"},
+    {"back": "welsh pub"},
     [],
     {'bartender': npc_welsh_bar},
     """It looks like a pint of Brains is the favourite drink here. Maybe it will help you blend in.
