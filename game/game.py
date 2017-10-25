@@ -28,6 +28,7 @@ def inventory_mass(inventory):
 	return inv_mass
 
 def list_of_npcs(npcs):
+
 	return ', '.join([npcs[npc].name for npc in npcs])
 
 def print_room_npcs(room):
@@ -39,7 +40,7 @@ def print_room_items(items):
 		print("There is " + list_of_items(items) + " here.\n")
 
 def print_inventory_items(items):
-	print("You're carrying", inv_mass, "kg.") 
+	print("You're carrying", inventory_mass(inventory), "kg.") 
 	if len(items) !=0:
 		print("You have " + list_of_items(items) + ".\n")
 
@@ -153,7 +154,8 @@ def anykey():
 			return
 
 def execute_talk(npc):
-	npc.talk()
+
+	current_room.npcs[npc].talk()
    
 
 def execute_look(item):
