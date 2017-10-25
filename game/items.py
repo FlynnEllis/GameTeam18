@@ -29,6 +29,7 @@ class item_drugs(item):
 		item.__init__(self,identifier,name,description,mass,price)
 	def use(self,player):
 		player.drugged = True
+		output('Surely this can\'t go wrong', player.sobriety)
 		return player
 
 
