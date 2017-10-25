@@ -41,16 +41,19 @@ class kirill_npc(npc):
 		npc.__init__(self,name,inventory,money,hp)
 		self.lines = ['To me','asdsad','asdsad','asdsad','asdsad','asdsad']
 	def talk(self,player):
-		line_index = navigate_chat_options(self.lines,0)
-		if line_index == 2:
-			output('',player.sobriety)
-		output(['To you','basdsad','aasdsad','sasdsad','fasdsad','hasdsad'][item_index],player.sobriety)
+		output('As you begin to apporach Kirill, you realise you need to hand in your game tomorrow and it is nowhere near finished! You wonder if Kirill takes bribes...',player.sobriety)
+		if irish_disco_biscuit in player.inventory:
+			output('Kirill would you care for an irish disco buicuit?',player.sobriety)
+			anykey()
+			output('Kirill accepts the drink gratefully. He seems please, perhaps this will help your mark.',player.sobriety)
+		line_index = navigate_chat_options(self.lines + ,0)
+
 		anykey()
 		return player
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0)
 npc_jill = npc('Jill', [vk], 5.0, 5.0)
-npc_kirill =npc('Kirill', [vodka_bottle_empty], 100.0, 1000.0)
+npc_kirill =kirill_npc('Kirill', [vodka_bottle_empty], 100.0, 1000.0)
 npc_Chuckle_1 = chuckle_npc('Barry Chuckle',[drugs], 0.0, 10.0)
 npc_Chuckle_2 = chuckle_npc('Paul Chuckle', [drugs], 0.0, 10.0)
 npc_gaz = npc('Gaz', [], 4.0, 6.0)

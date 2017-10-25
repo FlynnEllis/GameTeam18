@@ -32,11 +32,6 @@ def list_of_npcs(npcs):
 
 	return ', '.join([npcs[npc].name for npc in npcs])
 
-
-
-
-
-
 def print_room(player):
 
 	blank_line = "\n"
@@ -177,7 +172,7 @@ def execute_help():
 GO PLACE to move
 TAKE ITEM to take an item that is in a room
 DROP ITEM to drop an item in a room
-FIGHT NPC ITEM to fight an npc with an item (try something heavy)
+FIGHT NPC ITEM to fight an npc with an item in your inventory (try something heavy)
 TALK NPC to talk to an npc
 LOOK ITEM to inspect an item in your inventory
 USE ITEM to use an item in your inventory''')

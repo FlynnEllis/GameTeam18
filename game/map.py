@@ -119,9 +119,9 @@ room_tiger_tiger_second =  room(
     "tiger tiger second",
     {"north": "tiger tiger main", "toilet": "tiger tiger toilet", "bar":"tiger tiger bar"},
     [],
-    {},
+    {'kirill':npc_kirill},
     """You enter the second room in tiger tiger.
-its kinda like the other one but the floors arent as sticky this time.""")
+its kinda like the other one but the floors arent as sticky this time. You spot Kirill in one corner.""")
 
 room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
@@ -197,7 +197,7 @@ room_welsh_pub =  room(
     "welsh pub",
     {"bar": "pub bar", "ouside": "river"},
     [],
-    {},
+    {'dafydd':npc_welsh_man2,'gruffydd':npc_welsh_man2},
     """You have somehow ended up in a welsh pub. The delights of Delilah fill your ears, along with the cacophony of
 a room full of balding middle aged men singing along, they all seem to be glaring at you.
 They know you dont belong here. 
