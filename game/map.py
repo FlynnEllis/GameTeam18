@@ -125,7 +125,7 @@ its kinda like the other one but the floors arent as sticky this time. You spot 
 
 room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
-    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "welsh pub":"welsh pub"},
+    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "pub":"welsh pub"},
     [],
     {'dan':npc_dealer},
     """You contemplate why club toilets are designed so badly, you soon realise
