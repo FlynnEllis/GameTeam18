@@ -154,8 +154,6 @@ def execute_use(item,player):
 		anykey()
 	return player
 
-def execute_survey():
-	pass
 def execute_help():
 	print(''' 
 GO PLACE to move
@@ -164,8 +162,17 @@ DROP ITEM to drop an item
 FIGHT NPC ITEM to fight an npc with an item in your inventory (try something heavy)
 TALK NPC to talk to an npc
 LOOK ITEM to inspect an item in your inventory
-USE ITEM to use an item in your inventory''')
+USE ITEM to use an item in your inventory
+ID to list the ids of the items in the room and your inventory''')
 	anykey()
+
+def execute_id(player):
+	output('\nIn the room:',player.sobriety)
+	for item in player.current_room.items:
+		output(item.id,player.sobriety)
+	output('\nIn your inventory:',player.sobriety)
+	for item in player.inventory:
+		output(item.id,player.sobriety)
 
 def execute_command(command,player):
 
@@ -225,8 +232,9 @@ def execute_command(command,player):
 			output("Use what?", player.sobriety)
 			anykey()
 
-	elif command[0] == 'survey':
-		execute_survey()
+	elif command[0] == 'id':
+		execute_id(player)
+		anykey()
 	elif command[0] == 'help':
 		execute_help()
 
@@ -288,7 +296,7 @@ Was that a shopping trolley?
 You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter""")
 		anykey()
 		return True
-<<<<<<< HEAD
+
 	elif player.hp == 0:
 		print('You awaken in a police cell, you dread to imagine what fate awaits you')
 		anykey()
@@ -298,10 +306,7 @@ messages spam your messenger all night. 'enjoying netflix?!?!?!??!'
 This wasn't your wisest choice.''')
 		anykey()
 		return True
-	#drugs
-=======
-	#elif 
->>>>>>> db314f0b06bf9a49f8815036d3e3850fae0c708c
+
 	#elif: #lose fight
 	#elif: #drown
 	#elif: #takeaway
