@@ -32,16 +32,17 @@ class shop_npc(npc):
 class chuckle_npc(npc):
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
-
+		self.lines_to = ['To me']
+		self.lines_from =['To you']
 	def talk(self,player):
-		output('To me, to you',player.sobriety)
+		item_index = navigate_chat_options(self.lines_to,0)
+		output(self.lines_from[item_index],player.sobriety)
 		anykey()
 		return player
 
 class kirill_npc(npc):
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
-		self.lines = ['To me','asdsad','asdsad','asdsad','asdsad','asdsad']
 	def talk(self,player):
 		output('As you begin to apporach Kirill, you realise you need to hand in your game tomorrow and it is nowhere near finished! You wonder if Kirill takes bribes...',player.sobriety)
 		if irish_disco_biscuit in player.inventory:
@@ -52,6 +53,16 @@ class kirill_npc(npc):
 			output('Kirill accepts the drink gratefully.',player.sobriety)
 
 
+		anykey()
+		return player
+class welsh_npc(npc):
+	def __init__(self,name,inventory,money,hp):
+		npc.__init__(self,name,inventory,money,hp)
+		self.lines_to = ['Hello']#need adding
+		self.lines_from =['be\'r ddiawl wyt ti\'n edrych ar, Saes?']
+	def talk(self,player):
+		tem_index = navigate_chat_options(self.lines_to,0)
+		output(self.lines_from[item_index],player.sobriety)
 		anykey()
 		return player
 
@@ -65,11 +76,11 @@ npc_homeless = npc('Homeless man', [beer_bottle_empty], 0.0, 1.0)
 npc_mcdonalds = shop_npc("Worker", [cheeseburger,beefburger, chicken_nuggets, mayo_chicken, wrap_of_the_day, chips, mcflurry], 100.0, 30.0)
 npc_burger = shop_npc("Burgerman", [cheeseburger,beefburger], 20.0, 40.0)
 npc_welsh_bar = shop_npc('Bartender', [pint_brains], 50.0,10.0)
-npc_welsh_man = npc('Dafydd',[pint_brains],20,10)
+npc_welsh_man = welsh_npc('Dafydd',[pint_brains],20,10)
 npc_su_bar = shop_npc('Bartender', [vk,rum_coke, gin_tonic, vodka_shot, jager_bomb, water, dark_fruits, red_stripe, bloody_mary, sourz_shot, irish_disco_biscuit, sambuca_shot, whiskey_shot, tequila_shot, wine, irish_disco_biscuit], 100.0,5.0)
 npc_pryzm_bar= shop_npc('Bartender', [vk,rum_coke, gin_tonic, vodka_shot, jager_bomb, water, dark_fruits, red_stripe, bloody_mary, sourz_shot, sambuca_shot, whiskey_shot, tequila_shot, wine, irish_disco_biscuit], 200.0,5.0)
 npc_tiger_tiger_bar = shop_npc('Bartender', [vk,rum_coke, gin_tonic, vodka_shot, jager_bomb, water, dark_fruits, red_stripe, bloody_mary, sourz_shot, sambuca_shot, whiskey_shot, tequila_shot, wine], 100.0,5.0)
-npc_welsh_man2 = npc('Gruffydd',[pint_brains],20,10)
+npc_welsh_man2 = welsh_npc('Gruffydd',[pint_brains],20,10)
 npc_dealer = shop_npc('Dodgy Dan',[drugs],8,10)
 npc_bouncer = npc('Bouncer',[powerful_fist],4,20)
 #rum_coke gin_tonic vodka_shot jager_bomb water dark_fruits red_stripe pint_brains bloody_mary sourz_shot sambuca_shot whiskey_shot tequila_shot wine
