@@ -33,14 +33,23 @@ room_pre_pre_drinks = room(
     
 room_your_room = room(
     "your room",
-    {"back":'pre pre drinks'},
+    {"back":'pre pre drinks', "bed":'your bed'},
     [wallet, your_id, keys],
     {},
-    """You return to your room, sad and alone.
-    You crash onto your bed ands start crying.
-    WHY WOULD YOU GO HOME! 
-    WHO DOES THAT!
-    Game Over, you never go home after pre drinks!""")
+    """You sit on your bed contemplating your outfit for the night, the walls are shaking from
+    the predrinks occuring next door. It is time to grace them with your presence.
+
+    """)
+
+room_bed = room(
+    "your bed",
+    {},
+    [],
+    {},
+    """You are now known amongst your friends as the flaker, passive aggressive messages spam your messenger all night. 'enjoying netflix?!?!?!??!'
+    This wasn't your wisest choice.
+
+    """)
 
 room_student_union =  room(
     "student union",
@@ -276,16 +285,15 @@ room_burger_guy =  room(
 
 #ENDINGS BELOW
 #NEED MORE ENDINGS!
-room_ending =room(
-     "home",
-     {},
-    [],
-    [],
-    "Insert description here")
+room_endings = {
+"your bed": room_bed,
+"river": room_river,
+}
 
 
 rooms = {
 "your room": room_your_room,
+"your bed": room_bed,
 'pre pre drinks': room_pre_pre_drinks,
 "pre drinks": room_pre_drinks,
 "student union": room_student_union,
@@ -304,6 +312,7 @@ rooms = {
 "pryzm toilet": room_pryzm_toilet,
 "welsh pub": room_welsh_pub,
 "pub bar": room_pub_bar,
+"river": room_river,
 
 #"glam":room_glam, 
 #"revs":room_revs,  
