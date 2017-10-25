@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from os import system 
 import msvcrt
-from map import rooms
+from map import *
 from player import *
 from items import *
 from gameparser import *
@@ -265,14 +265,16 @@ def win_condition(player):
 		else:
 			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
 	elif player.drugged:
-		print('') 
+		system('cls')
+		print('Whoa this is wicked!') 
 		pyshedelic()
+		return True
 	#drugs
-	elif: #lose fight
-	elif: #drown
-	elif: #takeaway
-	else: #kiril irish
-		return False
+	#elif: #lose fight
+	#elif: #drown
+	#elif: #takeaway
+	#else: #kiril irish
+	#	return False
 
 
 
