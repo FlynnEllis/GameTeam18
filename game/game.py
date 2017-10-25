@@ -172,6 +172,15 @@ def execute_use(item,player):
 
 def execute_survey():
 	pass
+def execute_help():
+	print(''' 
+GO PLACE to move
+TAKE ITEM to take an item that is in a room
+DROP ITEM to drop an item in a room
+FIGHT NPC ITEM to fight an npc with an item (try something heavy)
+TALK NPC to talk to an npc
+LOOK ITEM to inspect an item in your inventory
+USE ITEM to use an item in your inventory''')
 
 def execute_command(command,player):
 
@@ -233,6 +242,8 @@ def execute_command(command,player):
 
 	elif command[0] == 'survey':
 		execute_survey()
+	elif command[0] == 'help':
+		execute_help()
 
 	else:
 		output("This makes no sense.", player.sobriety)
@@ -283,6 +294,24 @@ def win_condition(player):
    #     return True
 	#else:
 	 #   return False
+
+
+#	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
+#		if (keys not in player.inventory) or (phone not in player.inventory):
+#			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
+#		else:
+#			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
+#	elif player.drugged:
+#		print('') 
+#		pyshedelic()
+#	#drugs
+#	'''
+#	elif: #lose fight
+#	elif: #drown
+#	elif: #takeaway
+#	'''
+#	#else: #kiril irish
+	return False
 
 
 

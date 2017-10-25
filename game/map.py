@@ -37,7 +37,7 @@ help you along the way.""")
 room_your_room = room(
     "your room",
     {"out":'pre pre drinks', "bed":'your bed'},
-    [jager_bomb,wallet, your_id, keys],
+    [wallet, your_id, keys],
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are 
 shaking from the predrinks occuring next door. It is time to grace them with 
