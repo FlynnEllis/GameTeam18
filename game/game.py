@@ -307,7 +307,6 @@ def win_condition(player):
 
 
 	elif player.hp == 0:
-		print('You awaken in a police cell, you dread to imagine what fate awaits you')
 		anykey()
 		return True
 
