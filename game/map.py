@@ -31,8 +31,7 @@ room_pre_pre_drinks = room(
     """Welcome to the start of the greatest night of your life. 
 You have received an invitation to the biggest bar crawl in Cardiff which 
 includes such nightlife as the SU, Pryzm and even Tiger Tiger. 
-Before you leave you should select some belongings that will 
-help you along the way.""")
+""")
     
 room_your_room = room(
     "your room",
@@ -41,7 +40,8 @@ room_your_room = room(
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are 
 shaking from the predrinks occuring next door. It is time to grace them with 
-your presence.""")
+your presence. Before you leave you should select some belongings that will 
+help you along the way.""")
 
 room_bed = room(
     "your bed",
