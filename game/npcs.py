@@ -21,4 +21,5 @@ npc_su_bar = npc('Bartender', [vk,vk,vk,vk,vk,vk,vk,vk], 100.0,5.0)
 npc_pryzm_bar= npc('Bartender', [], 200.0,5.0)
 npc_tiger_tiger_bar = npc('Bartender', [], 100.0,5.0)
 npc_welsh_bar = npc('Bartender', [pint_brains], 50.0,10.0)
+npc_welsh_man = npc('Dafydd ap Evans',[pint_brains],20,10)
 
