@@ -6,7 +6,8 @@ class item():
 		self.desc = description
 		self.mass = mass
 		self.price = price
-	def use(player):
+	def use(self,player):
+		print('This does nothing')
 		return player
 
 class consumable(item):
@@ -23,6 +24,12 @@ class consumable(item):
 		player.sobriety -= self.units
 		player.inventory.remove(self)
 		return player
+class item_drugs(item):
+	def __init__(self,identifier,name,description,mass,price):
+		item.__init__(self,identifier,name,description,mass,price)
+	def use(self,player):
+		player.drugged = True
+		return player
 
 
 beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0.1)
@@ -34,8 +41,8 @@ keys = item('keys','keys','the keys to your flat',0,0.1)
 wallet = item('wallet','your wallet','',0,0.1)
 phone = item('phone','your phone','Your gateway to a Dragon taxi home.',0,0.1)
 your_id = item('id','your id','Don\'t lose this.',0,0.1)
-drugs = consumable('drugs','some drugs','some suspicious white powder',4.2,0,0.1)
-hipflask = consumable('hipflask','a hipflask','A cheapskates pride and joy.',4.2,0,5)
+drugs = item_drugs('drugs','some drugs','some suspicious white powder',4.2,20,)
+hipflask = consumable('hipflask','a hipflask','A cheapskates pride and joy.',4.2,0.1,5)
 jacket = item('jacket','your jacket','Keeps you warm, too warm.',4.2,0)
 vk = consumable('vk','a bottle of vk','The sweet nectar of the gods.',4.2,1,1)
 rum_coke = consumable('rum coke','a rum and coke','Suboptimal drink.',4.2,3,2)

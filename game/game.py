@@ -31,19 +31,6 @@ def list_of_npcs(npcs):
 
 	return ', '.join([npcs[npc].name for npc in npcs])
 
-def print_room(player):
-
-	blank_line = "\n"
-	output(blank_line + player.current_room.name.upper() + blank_line, player.sobriety)
-	# Display room description
-	output(player.current_room.description + blank_line, player.sobriety)
-	# Display items in room
-	
-	if len(player.current_room.items) != 0:
-		output("There is " + list_of_items(player.current_room.items) + " here.\n", player.sobriety)
-
-	if len(player.current_room.npcs) != 0:
-		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n", player.sobriety)
 
 
 def exit_leads_to(exits, direction):
@@ -56,6 +43,26 @@ def exit_leads_to(exits, direction):
 
 
 def print_menu(player):
+
+
+	output('\n' + player.current_room.name.upper() + '\n', player.sobriety)
+	# Display room description
+	output(player.current_room.description + '\n', player.sobriety)
+	# Display items in room
+	
+	if len(player.current_room.items) != 0:
+		output("There is " + list_of_items(player.current_room.items) + " here.\n", player.sobriety)
+
+	if len(player.current_room.npcs) != 0:
+		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n", player.sobriety)
+	output("You can go " + ', '.join([direction + ' to '+exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
+
+	items = list_of_items(player.inventory)
+	if items != '':
+		print('You have ' + items +'. ',end = '',flush = True)
+	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
+	output('You have £'+ str(player.money)+'\n', player.sobriety)
+		
 
 	output('Type HELP to see all available commands and their usage',player.sobriety)
 	
@@ -244,17 +251,9 @@ def execute_command(command,player):
 	return player
 
 def menu(player):
-	print_room(player)
 
 
-	output("You can go " + ', '.join([direction + ' to '+exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
 
-	items = list_of_items(player.inventory)
-	if items != '':
-		print('You have ' + items +'. ',end = '',flush = True)
-	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
-	output('You have £'+ str(player.money)+'\n', player.sobriety)
-		
 	print_menu(player)
 
 
