@@ -27,7 +27,7 @@ class consumable(item):
 
 beer_bottle_empty = item('bottle', 'an empty beer bottle','This could be dangerous.',6,0.1)
 glass_empty = item('glass','an empty glass','A relic of times gone by.',4.2,0.1)
-vodka_bottle_empty = item('vodkabottle', 'an empty vodka bottle', 'description', 6,0.1)
+vodka_bottle_empty = item('vbottle', 'an empty vodka bottle', 'description', 6,0.1)
 beer_bottle_empty = item('bottle', 'an empty beer bottle','description',6,0.1)
 glass_empty = item('glass','an empty glass','description',4.2,0.1)
 keys = item('keys','keys','the keys to your flat',0,0.1)
