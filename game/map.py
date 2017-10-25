@@ -111,7 +111,7 @@ room_tiger_tiger_bar =  room(
     "tiger tiger bar",
     {"exit":"tiger tiger", "south": "tiger tiger main", "tiger2":"tiger tiger second"},
     [],
-    {'Bartender': npc_tiger_tiger_bar},
+    {'bartender': npc_tiger_tiger_bar},
     """
 
     """)
@@ -151,7 +151,7 @@ room_pryzm_bar =  room(
     "pryzm bar",
     {"south": "pryzm main", "disco":"pryzm disco", "toilet":"pryzm toilet", "exit":"pryzm"},
     [],
-    {'Bartender': npc_pryzm_bar},
+    {'bartender': npc_pryzm_bar},
     """You hope you brought enough gold bullion with you as you approach the pryzm bar. The bartender spins bottles around fancily whilst pouring the
     last order. I guess spirits are the order of the night here.
     """)
@@ -210,7 +210,7 @@ room_pub_bar =  room(
     "pub bar",
     {"south": "welsh pub"},
     [],
-    {'Bartender': npc_welsh_bar},
+    {'bartender': npc_welsh_bar},
     """It looks like a pint of Brains is the favourite drink here. Maybe it will help you blend in.
     The welsh national anthem comes on and you try your best to move your mouth to match the funny sounds whilst you wait
     for your order.

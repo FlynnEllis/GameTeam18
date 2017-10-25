@@ -1,8 +1,13 @@
 from items import *
 from map import rooms
+class player_obj():
+	def __init__(self):
+		self.inventory = [beer_bottle_empty]
+		self.hp = 20
+		self.sobriety = 10
+		self.current_room = rooms["your room"]
+		self.money = 30
 
-inventory = [beer_bottle_empty]
-hp = 20
-sobriety = 10
 # Start game at the reception
-current_room = rooms["your room"]
+
+
