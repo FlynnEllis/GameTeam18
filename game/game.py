@@ -49,7 +49,7 @@ def print_room(player):
 		output("There is " + list_of_items(player.current_room.items) + " here.\n", player.sobriety)
 
 	if len(player.current_room.npcs) != 0:
-		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n")
+		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n", player.sobriety)
 
 
 def exit_leads_to(exits, direction):
@@ -89,9 +89,9 @@ def execute_go(direction,player):
 
 	if is_valid_exit(player.current_room.exits, direction):
 		player.current_room = move(player.current_room.exits, direction)
-		output("You are in", player.current_room.name, player.sobriety)
+		output("You are in "+ player.current_room.name, player.sobriety)
 	else:
-		output("You cannot go there.", player.sobriety)
+		output("You cannot go there. "+ player.sobriety)
 		anykey()
 	return player
 
@@ -285,8 +285,11 @@ def main():
 
 		# Execute the player's command
 
+<<<<<<< HEAD
 
 		
+=======
+>>>>>>> efc5f3b8a278a18f117066b51f7677a192509da4
 		player = execute_command(command,player)
 
 
