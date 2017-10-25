@@ -7,7 +7,6 @@ from items import *
 from gameparser import *
 from helperfunctions import *
 
-
 def get_item_from_inventory(item_id,player):
 	try:
 		return player.inventory[[item.id for item in player.inventory].index(item_id)]
@@ -290,22 +289,28 @@ def win_condition(player):
 		anykey()
 		return True
 	elif player.current_room == room_river:
-		print("""It appears whilst drunk you stumbled and fell in the river Taff, the water seeps into your clothes as your feet touch a number of foreign objects.
-Was that a shopping trolley?
-
-You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter""")
+		print("You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter")
 		anykey()
 		return True
+
 
 	elif player.hp == 0:
 		print('You awaken in a police cell, you dread to imagine what fate awaits you')
 		anykey()
+
+	#elif kirill disco biscuit:
+	#	anykey()
+	#	return True
+	elif (cheeseburger or chucken_nuggets or mayo_chicken or wrap_of_the_day or chips or bigmac or mcflurry or kebab) in player.inventory:
+		print("You purchased some food and stumbled home while eating it, a rather successful night.")
+
 	elif player.current_room == room_bed:
 		print('''You are now known amongst your friends as the flaker, passive aggressive 
 messages spam your messenger all night. 'enjoying netflix?!?!?!??!'
 This wasn't your wisest choice.''')
 		anykey()
 		return True
+
 
 	#elif: #lose fight
 	#elif: #drown
@@ -316,7 +321,10 @@ This wasn't your wisest choice.''')
 
 
 
+
+	
 	return False
+
 
 
 
