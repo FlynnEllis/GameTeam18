@@ -283,7 +283,17 @@ def win_condition(player):
 			return True
 	elif player.drugged:
 		system('cls')
-		print('Whoa this is wicked!') 
+		print('''Whoa this is wicked!
+			I never knew that Binary was so cool
+
+			10100100100101010010101010100101010101010
+			11001010101011100101000101010100101010100
+			01010101010101111000111010101010101001010
+			10101010011100001100011100011000011110010
+			11101011011000111001100101010100101001011
+
+			You quickly remember drugs are bad for you,
+			Filled with regret you stumble home and cry''')
 		psychedelic()
 		anykey()
 		return True
