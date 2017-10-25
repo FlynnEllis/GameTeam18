@@ -54,7 +54,7 @@ This wasn't your wisest choice.""")
 
 room_student_union =  room(
     "student union",
-    { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar","burger guy":"burger guy"},
+    { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar","burger":"burger guy"},
     [],
     {'bouncer':npc_bouncer,'jill':npc_jill},
     """You have arrived at the Student Union. 
