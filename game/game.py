@@ -275,10 +275,12 @@ def win_condition(player):
 			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
 		else:
 			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
+		anykey()
+		return True
 	elif player.drugged:
 		system('cls')
 		print('Whoa this is wicked!') 
-		pyshedelic()
+		psychedelic()
 		return True
 	#drugs
 	#elif: #lose fight
@@ -289,28 +291,7 @@ def win_condition(player):
 
 
 
- #   if player.current_room == rooms["Office"]:
-  #      output("Congratualations you have won!")
-   #     return True
-	#else:
-	 #   return False
 
-
-#	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
-#		if (keys not in player.inventory) or (phone not in player.inventory):
-#			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
-#		else:
-#			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
-#	elif player.drugged:
-#		print('') 
-#		pyshedelic()
-#	#drugs
-#	'''
-#	elif: #lose fight
-#	elif: #drown
-#	elif: #takeaway
-#	'''
-#	#else: #kiril irish
 	return False
 
 
