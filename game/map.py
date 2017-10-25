@@ -12,7 +12,7 @@ class room():
 room_pre_drinks =  room( 
     "pre drinks",
     {"south": "student union", "east": "tiger tiger", "west": "pryzm", "home": "your room"},
-    [], #items
+    [wine, dark_fruits,], #items
     {}, #npcs
 """You arrive at pre drinks, the room is full of vodka, testosterone and 
 bad life decisions. Apart from everyone having a crippling university debt
@@ -36,7 +36,7 @@ help you along the way.""")
     
 room_your_room = room(
     "your room",
-    {"back":'pre pre drinks', "bed":'your bed'},
+    {"out":'pre pre drinks', "bed":'your bed'},
     [wallet, your_id, keys],
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are 
