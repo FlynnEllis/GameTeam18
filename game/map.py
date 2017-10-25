@@ -54,7 +54,7 @@ This wasn't your wisest choice.""")
 
 room_student_union =  room(
     "student union",
-    { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
+    { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar","burger guy":"burger guy"},
     [],
     {'bouncer':npc_bouncer,'jill':npc_jill},
     """You have arrived at the Student Union. 
@@ -125,7 +125,7 @@ its kinda like the other one but the floors arent as sticky this time. You spot 
 
 room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
-    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar"},
+    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar",  "welsh pub":"welsh pub"},
     [],
     {},
     """You contemplate why club toilets are designed so badly, you soon realise
@@ -186,7 +186,7 @@ They are packed as usual and you have to wait for your time to shine.
 
 room_pryzm_smoking_area =  room(
     "pryzm smoke",
-    {"toilets": "pryzm toilet", "exit":"pryzm"},
+    {"toilets": "pryzm toilet", "exit":"pryzm", "welsh pub":"welsh pub"},
     [],
     {},
     """You walk into the smoking area and reach for your pockets for a cigarette, 
@@ -284,6 +284,13 @@ room_burger_guy =  room(
     He appears to stare at you like you are his next biggest catch, coiled like a spring he waits for you.
     Do you endulge thew coiled spring and eat here, or go home starving?""")
 
+room_win_home =room(
+    "home",
+    {},
+    [],
+    {},
+    """You are finally home, you tumble into bed. The room spins as you drift to sleep""")
+
 #ENDINGS BELOW
 #NEED MORE ENDINGS!
 room_endings = {
@@ -314,6 +321,7 @@ rooms = {
 "welsh pub": room_welsh_pub,
 "pub bar": room_pub_bar,
 "river": room_river,
+"home": room_win_home,
 
 #"glam":room_glam, 
 #"revs":room_revs,  
