@@ -1,3 +1,4 @@
+from helperfunctions import *
 class item():
 	def __init__(self,identifier,name,description,mass,price):
 		self.id = identifier  
