@@ -7,7 +7,7 @@ class npc():
 		self.hp = hp
 		
 	def talk():
-
+		pass
 class bar_npc():
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
