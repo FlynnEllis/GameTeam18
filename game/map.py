@@ -195,7 +195,7 @@ it is then you remember that smoking shortens your life expectancy by ten years,
 
 room_welsh_pub =  room(
     "welsh pub",
-    {"bar": "pub bar", "ouside": "river"},
+    {"bar": "pub bar", "outside": "river"},
     [],
     {'dafydd':npc_welsh_man2,'gruffydd':npc_welsh_man2},
     """You have somehow ended up in a welsh pub. The delights of Delilah fill your ears, along with the cacophony of
