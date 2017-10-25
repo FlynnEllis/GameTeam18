@@ -6,11 +6,11 @@ class npc():
 		self.inventory = inventory
 		self.money = money
 		self.hp = hp
-		
-	def talk(self):
+		self.lines = ['Hello'+ self.name]
+	def talk(self,player):
 		pass
 		
-class shop_npc():
+class shop_npc(npc):
 	def __init__(self,name,inventory,money,hp):
 		npc.__init__(self,name,inventory,money,hp)
 	def talk(self,player):
@@ -22,6 +22,13 @@ class shop_npc():
 			print('That is too expensive')
 			anykey()
 		return player
+
+class chuckle_npc(npc):
+	def __init__(self,name,inventory,money,hp):
+		npc.__init__(self,name,inventory,money,hp)
+		self.lines = ['To me','asdsad','asdsad','asdsad','asdsad','asdsad']
+	def talk(self,player):
+		item_index = navigate_chat_options(self.lines,0)
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0)
 npc_jill = npc('Jill', [vk], 5.0, 5.0)

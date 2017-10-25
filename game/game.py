@@ -285,7 +285,7 @@ def main():
 
 		# Execute the player's command
 
-		execute_command(command)
+
 		
 		player = execute_command(command,player)
 
