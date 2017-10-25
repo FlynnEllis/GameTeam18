@@ -44,7 +44,7 @@ room_your_room = room(
 
 room_student_union =  room(
     "student union",
-    { "leave1": "tiger tiger", "leave2": "pryzm", "north": "student union bar"},
+    { "tiger": "tiger tiger", "pryzm": "pryzm", "dancefloor": "student union dancefloor", "bar":"student union bar"},
     [],
     {'Jill' : npc_jill},
     """You have arrived at the Student Union. 
@@ -54,18 +54,28 @@ room_student_union =  room(
     The music appears to be 80s hits, which you seem to enjoy.
     Do you make your way to the bar or leave to go to another club?""")
 
+room_student_union_dancefloor =  room(
+    "student union dancefloor",
+    {"bar": "student union bar","exit":"student union"},
+    [],
+    {},
+    """The floor is sticky with less fortunate VK's than yours, they have a good owner. You awkwardly sway to the tunes, swigging on your VK occaisionally to blend in.
+    You are not quite sure why anyone drinks VK's.
+    """)
+
 room_student_union_bar =  room(
     "student union bar",
-    {"south": "student union"},
+    {"dancefloor": "student union dancefloor", "exit":"student union"},
     [],
     {'Bartender': npc_su_bar},
-    """As you lean over the bar to peer into the mini fridge, 
-    you find that the only drinks on offer tonight are VKs and they only cost 1. Perfect.
+    """After queing for at least half an hour you make it to the bar. As the pressure of the people pushing on you grows
+    you manage to shout VK breathlessly at the bartender. He asks what colour and you desperately gesture at the fridge.
+    Luckily VK's only only cost 1 tonight. Perfect.
     """)
 
 room_tiger_tiger =  room(
     "tiger tiger",
-    {"leave1": "student union", "leave2": "pryzm", "upstairs": "tiger tiger main"},
+    {"SU": "student union", "pryzm": "pryzm", "upstairs": "tiger tiger main"},
     [],
     {},
     """You arrive at the ever hyped but always dissapointing Tiger Tiger. 
@@ -74,7 +84,7 @@ room_tiger_tiger =  room(
 
 room_tiger_tiger_main =  room(
     "tiger tiger main",
-    {"leave1": "student union", "leave2": "pryzm", "downstairs": "tiger tiger", "east": "tiger tiger second"},
+    {"downstairs": "tiger tiger", "bar": "tiger tiger bar", "tiger2":"tiger tiger second"},
     [],
     {},
     """You are in the main room of tiger tiger!
@@ -85,7 +95,7 @@ room_tiger_tiger_main =  room(
 
 room_tiger_tiger_bar =  room(
     "tiger tiger bar",
-    {"leave1": "student union", "leave2": "pryzm", "south": "tiger tiger main"},
+    {"exit":"tiger tiger", "south": "tiger tiger main", "tiger2":"tiger tiger second"},
     [],
     {'Bartender': npc_tiger_tiger_bar},
     """
@@ -94,7 +104,7 @@ room_tiger_tiger_bar =  room(
 
 room_tiger_tiger_second =  room(
     "tiger tiger second",
-    {"leave1": "student union", "leave2": "pryzm", "west": "tiger tiger main", "east": "smoking area", "south": "tiger tiger toilet"},
+    {"north": "tiger tiger main", "toilet": "tiger tiger toilet", "bar":"tiger tiger bar"},
     [],
     {},
     """You enter the second room in tiger tiger.
@@ -104,25 +114,17 @@ room_tiger_tiger_second =  room(
 
 room_tiger_tiger_toilet =  room(
     "tiger tiger toilet",
-    {"leave1": "student union", "leave2": "pryzm", "north": "tiger tiger second"},
+    {"tiger2": "tiger tiger second", "south":"tiger tiger main","bar":"tiger tiger bar"},
     [],
     {},
     """
 
     """)
 
-room_smoking_area =  room(
-    "smoking area",
-    {"west": "tiger tiger second"},
-    [],
-    {},
-    """You dont want to do that do you? Smoking is bad remember!
-
-    """)
 
 room_pryzm =  room(
     "pryzm",
-    {"leave1": "student union", "leave2": "tiger tiger", "upstairs": "pryzm main"},
+    {"SU": "student union", "tiger": "tiger tiger", "upstairs": "pryzm main"},
     [],
     {},
     """You arrive at Pryzm. 
@@ -133,46 +135,58 @@ room_pryzm =  room(
 
 room_pryzm_bar =  room(
     "pryzm bar",
-    {"leave1": "student union", "leave2": "tiger tiger", "south": "pryzm main"},
+    {"south": "pryzm main", "disco":"pryzm disco", "toilet":"pryzm toilet", "exit":"pryzm"},
     [],
     {'Bartender': npc_pryzm_bar},
-    """ 
+    """You hope you brought enough gold bullion with you as you approach the pryzm bar. The bartender spins bottles around fancily whilst pouring the
+    last order. I guess spirits are the order of the night here.
     """)
 
 room_pryzm_main =  room(
     "pryzm main",
-    {"leave1": "student union", "leave2": "tiger tiger", "west": "pryzm disco", "north": "bar", "south": "toilet","downstairs": "pryzm"},
+    {"disco": "pryzm disco", "bar":"pryzm bar", "toilet":"pryzm toilet","exit":"pryzm"},
     [],
     {'Barry Chuckle' : npc_Chuckle_1, 'Paul Chuckle' : npc_Chuckle_2},
-    """Welcome to the main floor 
-    (something funny), in the corner you spot two odd looking men with moustaches taking pictures with everyone.
+    """Welcome to the main floor where the bass is giving you heart palputations and the lights elevating you to a new plane of being,
+    in the corner you spot two odd looking men with moustaches taking pictures with everyone.
     """)
 
 room_pryzm_disco =  room(
     "pryzm disco",
-    {"leave1": "student union", "leave2": "tiger tiger", "east": "pryzm main", "north": "bar"},
+    {"north":"pryzm main", "bar":"pryzm bar", "exit":"pryzm"},
     [],
     {},
-    """
+    """The sound of High School Musical greets your ears as you enter the disco room, you take one last deep breath before proceeding to belt
+    out the lyrics to the best of your ability. Perhaps you should work on those high notes.
 
     """)
 
 room_pryzm_toilet=  room(
     "pryzm toilet",
-    {"leave1": "student union", "leave2": "tiger tiger", "north": "pryzm main"},
+    {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm"},
     [],
     {},
-    """
+    """The smell of piss and other delights greets you as you walk into the toilets. They are packed as usual and you have to wait for your time to shine.
+    """)
+
+
+room_pryzm_smoking_area =  room(
+    "pryzm smoke",
+    {"toilets": "pryzm toilet", "exit":"pryzm"},
+    [],
+    {},
+    """You walk into the smoking area and reach for your pockets for a cigarette, it is then you remember that smoking shortens your life expectancy by ten years,
+    you won't be smoking today.
 
     """)
 
 room_welsh_pub =  room(
     "welsh pub",
-    {"north": "pub bar", "ouside": "river"},
+    {"bar": "pub bar", "ouside": "river"},
     [],
     {},
-    """You have somehow ended up in a welsh pub.
-    The room is full of balding middle aged men that all seem to be glaring at you.
+    """You have somehow ended up in a welsh pub. The delights of Delilah fill your ears, along with the cacophony of
+    a room full of balding middle aged men singing along, they all seem to be glaring at you.
     They know you dont belong here. 
     You know you dont belong here.
 
@@ -183,8 +197,19 @@ room_pub_bar =  room(
     {"south": "welsh pub"},
     [],
     {'Bartender': npc_welsh_bar},
-    """
+    """It looks like a pint of Brains is the favourite drink here. Maybe it will help you blend in.
+    The welsh national anthem comes on and you try your best to move your mouth to match the funny sounds whilst you wait
+    for your order.
 
+    """)
+
+room_river = room(
+    "river",
+    {},
+    [],
+    {},
+    """It appears whilst drunk you stumbled and fell in the river Taff, the water seeps into your clothes as your feet touch a number of foreign objects.
+    Was that a shopping trolley?
     """)
 
 
@@ -265,12 +290,13 @@ rooms = {
 "pre drinks": room_pre_drinks,
 "student union": room_student_union,
 "student union bar": room_student_union_bar,
+"student union dancefloor": room_student_union_dancefloor,
 "tiger tiger": room_tiger_tiger, 
 "tiger tiger main": room_tiger_tiger_main,
 "tiger tiger bar": room_tiger_tiger_bar,
 "tiger tiger second": room_tiger_tiger_second,
 "tiger tiger toilet": room_tiger_tiger_toilet,
-"smoking area": room_smoking_area,   
+"pryzm smoke": room_pryzm_smoking_area,   
 "pryzm":room_pryzm,
 "pryzm bar": room_pryzm_bar,
 "pryzm main": room_pryzm_main,
