@@ -255,8 +255,21 @@ def move(exits, direction):
 
 	return rooms[exits[direction]]
 
-def win_condition():
-	return False
+def win_condition(player):
+	if (player.current_room in [room_student_union,room_tiger_tiger,room_pryzm]) and (your_id not in player.inventory):
+		if (keys not in player.inventory) or (phone not in player.inventory):
+			print('With neither an id to enter a club or your keys or phone to get home, you spend the night on the streets')
+		else:
+			print('Without your id you are forced to go home, it\'s too late to go out again so you cry yourself to sleep')
+	elif player.drugged:
+		print('') 
+		pyshedelic()
+	#drugs
+	elif: #lose fight
+	elif: #drown
+	elif: #takeaway
+	else: #kiril irish
+		return False
 
 
 
@@ -270,9 +283,10 @@ def win_condition():
 
 # This is the entry point of our program
 def main():
+
 	player = player_obj()
 	# Main game loop
-	while not win_condition():
+	while not win_condition(player):
 		# Display game status (room description, inventory etc.)
 		system('cls')
 		print_room(player)

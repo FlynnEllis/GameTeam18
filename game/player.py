@@ -7,7 +7,7 @@ class player_obj():
 		self.sobriety = 10
 		self.current_room = rooms["your room"]
 		self.money = 30
-
+		self.drugged = False
 # Start game at the reception
 
 

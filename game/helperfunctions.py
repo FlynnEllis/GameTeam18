@@ -1,5 +1,5 @@
 from os import system 
-import msvcrt, random
+import msvcrt, random, time
 
 def print_chat_options(options,cursor):
     for index in range(len(options)):
@@ -42,6 +42,14 @@ def anykey():
     while True:
         if msvcrt.kbhit():
             return
+
+def psychedelic():
+    for i in range(0,15):
+
+        colours_list = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
+        for i in colours_list: 
+            time.sleep(0.05)
+            system('color 0' + i)
 
 
 

@@ -6,9 +6,12 @@ class npc():
 		self.inventory = inventory
 		self.money = money
 		self.hp = hp
-		self.lines = ['Hello'+ self.name]
+		self.lines = ['Hello '+ self.name,'']
 	def talk(self,player):
-		pass
+		item_index = navigate_chat_options(self.lines,0)
+		output(['Hello','basdsad','aasdsad','sasdsad','fasdsad','hasdsad'][item_index],player.sobriety)
+		anykey()
+		return player
 		
 class shop_npc(npc):
 	def __init__(self,name,inventory,money,hp):
@@ -29,13 +32,15 @@ class chuckle_npc(npc):
 		self.lines = ['To me','asdsad','asdsad','asdsad','asdsad','asdsad']
 	def talk(self,player):
 		item_index = navigate_chat_options(self.lines,0)
+		output(['To you','basdsad','aasdsad','sasdsad','fasdsad','hasdsad'][item_index],player.sobriety)
+		anykey()
 		return player
 
 npc_john = npc('John',[beer_bottle_empty,phone],4.50,5.0)
 npc_jill = npc('Jill', [vk], 5.0, 5.0)
 npc_kirill =npc('Kirill', [vodka_bottle_empty], 100.0, 1000.0)
-npc_Chuckle_1 = npc('Barry Chuckle',[drugs], 0.0, 10.0)
-npc_Chuckle_2 = npc('Paul Chuckle', [drugs], 0.0, 10.0)
+npc_Chuckle_1 = chuckle_npc('Barry Chuckle',[drugs], 0.0, 10.0)
+npc_Chuckle_2 = chuckle_npc('Paul Chuckle', [drugs], 0.0, 10.0)
 npc_gaz = npc('Gaz', [], 4.0, 6.0)
 npc_homeless = npc('Homeless man', [beer_bottle_empty], 0.0, 1.0)
 npc_su_bar = shop_npc('Bartender', [vk,vk,vk,vk,vk,vk,vk,vk], 100.0,5.0)
