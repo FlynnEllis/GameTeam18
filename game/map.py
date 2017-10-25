@@ -270,7 +270,7 @@ room_mc_donalds =  room(
     "mc donalds",
     {"home": "home"},
     [],
-    [],
+    {"worker":npc_mcdonalds},
     """ Welcome to Mc Donalds, what many people consider is the root of all evil. 
     This fine establishjment is packed, the bouncers are making you queue and most people are sat on the floor.
     Do you choose to risk your colon and ventuire in or go home hungry?""")
@@ -279,10 +279,11 @@ room_burger_guy =  room(
     "burger guy",
     {"home": "home"},
     [],
-    [],
-    """ As you leave the SU you notice the usual guy flipping his burgers, with as much finese as your night out.
+    {"burgerman":npc_burger},
+    """As you leave the SU you notice the usual guy flipping his burgers, with as much finese as your night out.
     He appears to stare at you like you are his next biggest catch, coiled like a spring he waits for you.
-    Do you endulge thew coiled spring and eat here, or go home starving?""")
+    Do you endulge thew coiled spring and eat here, or go home starving?
+    """)
 
 room_win_home =room(
     "home",
