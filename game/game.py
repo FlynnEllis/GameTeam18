@@ -280,7 +280,7 @@ def win_condition(player):
 		psychedelic()
 		anykey()
 		return True
-	elif player.hp =< 0:
+	elif player.hp <= 0:
 		print("You died.")
 		anykey()
 		return True

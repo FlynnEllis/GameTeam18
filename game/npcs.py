@@ -46,7 +46,7 @@ class kirill_npc(npc):
 			output('Kirill would you care for an irish disco buicuit?',player.sobriety)
 			anykey()
 			output('Kirill accepts the drink gratefully. He seems please, perhaps this will help your mark.',player.sobriety)
-		line_index = navigate_chat_options(self.lines + ,0)
+		line_index = navigate_chat_options(self.lines + 0)
 
 		anykey()
 		return player
