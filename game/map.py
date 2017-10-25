@@ -36,7 +36,7 @@ includes such nightlife as the SU, Pryzm and even Tiger Tiger.
 room_your_room = room(
     "your room",
     {"out":'pre pre drinks', "bed":'your bed'},
-    [wallet, your_id, keys],
+    [your_id, keys],
     {},
     """You sit on your bed contemplating your outfit for the night, the walls are 
 shaking from the predrinks occuring next door. It is time to grace them with 

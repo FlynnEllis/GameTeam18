@@ -41,6 +41,7 @@ def anykey():
     print('\nPress any key to continue')
     while True:
         if msvcrt.kbhit():
+            msvcrt.getch()
             return
 
 def psychedelic():

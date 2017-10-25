@@ -326,8 +326,13 @@ This wasn't your wisest choice.''')
 
 	elif player.current_room == room_win_home:
 		print('''You may have a headache in the morning but you made it home safely after a nice stomachfull of food,
-			Congratulations you met a win condition!''')
-
+			Probably the best result you could have hoped for.''')
+		anykey()
+		return True
+	elif irish_disco_biscuit in npc_kirill.inventory:
+		print('Your night may not have been the best, but you have at least acheived one thing, you will surely get a high mark for your game.')
+		anykey()
+		return True
 
 	#elif: #lose fight
 	#elif: #drown

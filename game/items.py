@@ -24,6 +24,7 @@ class consumable(item):
 		player.sobriety -= self.units
 		player.inventory.remove(self)
 		return player
+		
 class item_drugs(item):
 	def __init__(self,identifier,name,description,mass,price):
 		item.__init__(self,identifier,name,description,mass,price)
