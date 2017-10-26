@@ -186,7 +186,7 @@ They are packed as usual and you have to wait for your time to shine.
 
 room_pryzm_smoking_area =  room(
     "pryzm smoke",
-    {"toilets": "pryzm toilet", "exit":"pryzm", "welsh pub":"welsh pub"},
+    {"toilets": "pryzm toilet", "exit":"pryzm", "pub":"welsh pub"},
     [],
     {},
     """You walk into the smoking area and reach for your pockets for a cigarette, 
