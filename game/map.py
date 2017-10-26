@@ -176,7 +176,7 @@ high notes.""")
 
 room_pryzm_toilet=  room(
     "pryzm toilet",
-    {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm"},
+    {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm", "pub":"welsh pub"},
     [],
     {},
     """The smell of piss and other delights greets you as you walk into the toilets. 
