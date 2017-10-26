@@ -57,13 +57,12 @@ def print_menu(player):
 		output("There is " + list_of_npcs(player.current_room.npcs) + " here.\n", player.sobriety)
 	output("You can go " + ', '.join([direction + ' to '+exit_leads_to(player.current_room.exits, direction) for direction in player.current_room.exits]) + ".\n", player.sobriety)
 
-	items = list_of_items(player.inventory)
-	if items != '':
-		print('You have ' + items +'. ',end = '',flush = True)
-	output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
+	if len(player.inventory) != 0:
+		output('You have ' + list_of_items(player.inventory) +'. ',player.sobriety)
+		output("You're carrying " + str(inventory_mass(player.inventory))+ "kg.\n", player.sobriety) 
+
 	output('You have £'+ str(format(player.money, '.2f'))+'\n', player.sobriety)
 		
-
 	output('Type HELP to see all available commands and their usage',player.sobriety)
 	
 	output("What do you want to do?",player.sobriety)
