@@ -176,11 +176,12 @@ high notes.""")
 
 room_pryzm_toilet=  room(
     "pryzm toilet",
-    {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm"},
+    {"smoke":"pryzm smoke", "north": "pryzm main", "exit":"pryzm", "pub":"welsh pub"},
     [],
     {},
     """The smell of piss and other delights greets you as you walk into the toilets. 
-They are packed as usual and you have to wait for your time to shine.
+They are packed as usual and you have to wait for your time to shine. Right in the middle of your discharge a man
+grabs you and tells you to come watch the match at the welsh pub.
     """)
 
 
