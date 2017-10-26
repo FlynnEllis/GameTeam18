@@ -1,5 +1,5 @@
 import string
-import re
+
 
 
 skip_words = ['a', 'about', 'all', 'an', 'another', 'any', 'around', 'at',

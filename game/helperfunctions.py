@@ -14,9 +14,15 @@ def navigate_chat_options(options,cursor):
     key = getkey()
     while 1:
         if key == 'up':
-            return navigate_chat_options(options,cursor -1)
+            if cursor > 0:
+                return navigate_chat_options(options,cursor -1)
+            else:
+                return navigate_chat_options(options,len(options) - 1)
         elif key == 'down':
-            return navigate_chat_options(options,cursor +1)
+            if cursor <  len(options) - 1:
+                return navigate_chat_options(options,cursor +1)
+            else:
+                return navigate_chat_options(options,0)
         else:
             return cursor
         key = getkey()
