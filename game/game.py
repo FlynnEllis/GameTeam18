@@ -133,7 +133,6 @@ def execute_fight(npc,item,player):
 		
 		anykey()
 	else:
-		print(npc)
 		output('The last thing you see is '+npc+' wielding '+victim.inventory[0].name+' before you are knocked unconscious',player.sobriety)
 		player.hp = 0
 	return player
