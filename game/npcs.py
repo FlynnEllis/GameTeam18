@@ -61,7 +61,7 @@ class welsh_npc(npc):
 		self.lines_to = ['Hello']#need adding
 		self.lines_from =['be\'r ddiawl wyt ti\'n edrych ar, Saes?']
 	def talk(self,player):
-		tem_index = navigate_chat_options(self.lines_to,0)
+		item_index = navigate_chat_options(self.lines_to,0)
 		output(self.lines_from[item_index],player.sobriety)
 		anykey()
 		return player

@@ -301,7 +301,7 @@ def win_condition(player):
 		return True
 
 	elif player.current_room == room_river:
-		print("You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter")
+		print("You You wake up at the bay the next morning cold and covered in bits of plastic and fecal matter")
 		anykey()
 		return True
 
@@ -313,7 +313,7 @@ def win_condition(player):
 	#elif kirill disco biscuit:
 	#	anykey()
 	#	return True
-	elif (cheeseburger or chucken_nuggets or mayo_chicken or wrap_of_the_day or chips or bigmac or mcflurry or kebab) in player.inventory:
+	elif (cheeseburger or beefburger or chucken_nuggets or mayo_chicken or wrap_of_the_day or chips or bigmac or mcflurry or kebab) in player.inventory:
 		print("You purchased some food and stumbled home while eating it, a rather successful night.")
 		return True
 
